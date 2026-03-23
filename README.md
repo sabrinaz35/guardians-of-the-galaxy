@@ -14,3 +14,7 @@ Aantal ideeën:
 - Een raket toevoegen dat als je onderin de pagina verder probeerd te scrollen dat die dan naar boven schiet
 - Als je over de elementen van de satalliet heen hovert dat je dan meer informatie krijgt over dat element.
 - Black hole - easter egg 😌
+
+We hebben een eerste opzet gemaakt via Figma om iedereen een duidelijk beeld te geven.
+
+<img src="images/readme-images/23-03-idee1-figma.png" alt="Schetsen van eerste idee uitgewerkt in figma">
