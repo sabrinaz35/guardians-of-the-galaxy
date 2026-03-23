@@ -9,6 +9,7 @@
     --color-background: light-dark( #181932, #181932);
     --color-background-1: light-dark( #292f6b, #292f6b);
     --color-background-2: light-dark( #43a9be, #43a9be);
+    --accent-background: light-dark( black, rgb(241, 228, 189));
 
     --color-accent-1: light-dark( #EB5C35, #EB5C35);
     --color-accent-2: light-dark( #d43f16, #d43f16);
@@ -16,4 +17,18 @@
     --color-text-main: light-dark( #000000, #ffffff);
     --color-text-2: light-dark( #EB5C35, #EB5C35);
 
+}
+
+body {
+    background-color: #181932;
+    background-image: 
+        radial-gradient(white, rgb(255 255 255 / 0.2) 5px, transparent 3px),
+        radial-gradient(white, rgb(255 255 255 / 0.15) 2px, transparent 2px),
+        radial-gradient(white, rgb(255 255 255 / 0.1) 4px, transparent 3px);
+    
+    background-size: 550px 550px, 350px 350px, 250px 250px;
+    background-position: 0 0, 40px 60px, 130px 270px;
+
+    height: 100vh;
+    width: 0;    
 }
