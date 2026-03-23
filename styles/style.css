@@ -19,6 +19,7 @@
 }
 
 body {
+
     background-color: #181932;
     background-image: 
         radial-gradient(white, rgb(255 255 255 / 0.2) 5px, transparent 3px),
@@ -29,20 +30,64 @@ body {
     background-position: 0 0, 40px 60px, 130px 270px;
 
     height: 100vh;
-    width: 0;    
+    width: 100%;    
+}
+
+p {
+    margin:1em 0;
+}
+
+h2 {
+    margin-bottom:1em;
+}
+
+ul {
+  list-style-position: outside;
+  padding-left: 1em;
+}
+
+ul li {
+  text-indent: -1em;  
+  padding-left: 1em;  
 }
 
 section {
-    display: flex;
-    flex-direction:column;
-    padding:1em;
-    margin:auto;
-    width:80vw;
-    max-width:50em;
+    position: relative;
+    width: 80vw;
+    max-width: 50em;
+    margin: auto;
+    padding: 2em 0;
 }
 
-div {
-    margin:1em;
-    padding:1em;
-    background-color: grey;
+.info-card-container {
+    height: 24em;
+}
+
+/* Alleen de info-cards centreren binnen hun section */
+.info-card {
+    position: absolute;
+    width: 80%;
+    height:auto;
+    padding: 1em 2em;
+    background: #D9D9D9;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    color: black;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Offset effect voor gestapelde kaarten */
+.info-card:nth-child(1) {
+    z-index: 1;
+    transform: translate(calc(-50% + -1em), calc(-50% + -3em));
+}
+.info-card:nth-child(2) {
+    z-index: 2;
+    transform: translate(-50%, -50%);
+}
+.info-card:nth-child(3) {
+    z-index: 3;
+    transform: translate(calc(-50% + 1em), calc(-50% + 3em));
 }
