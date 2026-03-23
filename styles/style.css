@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Colors */
+    color-scheme: light dark;
+    --color-background: light-dark( #181932, #181932);
+    --color-background-1: light-dark( #292f6b, #292f6b);
+    --color-background-2: light-dark( #43a9be, #43a9be);
+
+    --color-accent-1: light-dark( #EB5C35, #EB5C35);
+    --color-accent-2: light-dark( #d43f16, #d43f16);
+
+    --color-text-main: light-dark( #000000, #ffffff);
+    --color-text-2: light-dark( #EB5C35, #EB5C35);
+
+}
