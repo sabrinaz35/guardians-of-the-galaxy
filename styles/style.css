@@ -17,3 +17,19 @@
     --color-text-2: light-dark( #EB5C35, #EB5C35);
 
 }
+
+
+section {
+    display: flex;
+    flex-direction:column;
+    padding:1em;
+    margin:auto;
+    width:80vw;
+    max-width:50em;
+}
+
+div {
+    margin:1em;
+    padding:1em;
+    background-color: grey;
+}
