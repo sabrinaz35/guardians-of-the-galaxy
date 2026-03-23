@@ -109,6 +109,7 @@ body {
 
 main {
     width: 100%;
+    position: relative;
 }
 
 section {
@@ -126,6 +127,25 @@ div {
     background-color: grey;
 }
 
+
+.earth-image {
+    width: 700px;
+    height: 700px;
+    position: absolute;
+    z-index: 2;
+    top: 10%;
+    left: 50%;
+    animation: rotate-earth 15s linear infinite;
+}
+
+@keyframes rotate-earth {
+    0% {
+        transform: translate(-10%, 80vw) rotate(0);
+    }
+    100% {
+        transform: translate(-10%, 80vw) rotate(360deg);
+    }
+}
 .foto-satellite {
     min-width: 10em;
     max-width: 30vmin;
