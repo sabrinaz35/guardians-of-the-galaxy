@@ -27,6 +27,18 @@
     --card-background: rgba(25, 25, 40, 0.9);
 }
 
+@font-face {
+    font-family: orbitron;
+    src: url(/fonts/Orbitron-VariableFont_wght.ttf);
+} 
+/* https://fonts.google.com/specimen/Orbitron?preview.script=Latn */
+
+@font-face {
+    font-family: rajdhani;
+    src: url(/fonts/Rajdhani-Regular.ttf);
+}
+/* https://fonts.google.com/specimen/Rajdhani?preview.script=Latn */
+
 body {
 
     background-color: var(--color-background);
@@ -45,15 +57,22 @@ body {
 
     h1 {
         color: var(--color-text-2);
+        font-family: orbitron;
     }
 }
 
 p {
     margin:1em 0;
+    font-family: rajdhani;
 }
 
 h2 {
     margin-bottom:1em;
+    font-family: orbitron;
+}
+
+h3 {
+    font-family: orbitron;
 }
 
 ul {
