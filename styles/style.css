@@ -173,6 +173,10 @@ section {
     transform: translate(calc(-50% + 1em), calc(-50% + 3em));
 }
 
+.logo {
+    width: 40%;
+    height: 40%;
+}
 
 .earth-image {
     width: 700px;
@@ -182,7 +186,7 @@ section {
     bottom: 0;
     left: 50%;
     animation: rotate-earth 40s linear infinite;
-    transition: width 0.8s ease, height 0.8s ease;
+    transition: width 0.4s ease, height 0.4s ease;
 }
 
 @keyframes rotate-earth {
