@@ -18,11 +18,56 @@
 }
 
 body {
+
+    background-color: #181932;
+    background-image: 
+        radial-gradient(white, rgb(255 255 255 / 0.2) 5px, transparent 3px),
+        radial-gradient(white, rgb(255 255 255 / 0.15) 2px, transparent 2px),
+        radial-gradient(white, rgb(255 255 255 / 0.1) 4px, transparent 3px);
+    
+    background-size: 550px 550px, 350px 350px, 250px 250px;
+    background-position: 0 0, 40px 60px, 130px 270px;
+
+    min-height: 100vh;
+    width: 100%;    
+  
     color: var(--color-text-main);
 
     h1 {
         color: var(--color-text-2);
     }
+}
+
+p {
+    margin:1em 0;
+}
+
+h2 {
+    margin-bottom:1em;
+}
+
+ul {
+  list-style-position: outside;
+  padding-left: 1em;
+}
+
+ul li {
+  text-indent: -1em;  
+  padding-left: 1em;  
+}
+
+main {
+    width: 100%;
+    position: relative;
+    padding-top: 100vh;
+}
+
+section {
+    position: relative;
+    width: 80vw;
+    max-width: 50em;
+    margin: auto;
+    padding: 2em 0;
 }
 
 
@@ -159,78 +204,9 @@ body {
 }
 
 
-@keyframes float {
-  0% {
-    transform: translate(0px, 0px) rotate(0deg);
-  }
-  12.5% {
-    transform: translate(5px, -5px) rotate(3deg);
-  }
-  25% {
-    transform: translate(10px, -10px) rotate(0deg);
-  }
-  50% {
-    transform: translate(0px, -20px) rotate(-3deg);
-  }
-  75% {
-    transform: translate(-10px, -10px) rotate(1deg);
-  }
-  87.5% {
-    transform: translate(5px, -5px) rotate(2deg);
-  }
-  100% {
-    transform: translate(0px, 0px) rotate(0deg);
-  }
-}
 
 
 
-body {
-
-    background-color: #181932;
-    background-image: 
-        radial-gradient(white, rgb(255 255 255 / 0.2) 5px, transparent 3px),
-        radial-gradient(white, rgb(255 255 255 / 0.15) 2px, transparent 2px),
-        radial-gradient(white, rgb(255 255 255 / 0.1) 4px, transparent 3px);
-    
-    background-size: 550px 550px, 350px 350px, 250px 250px;
-    background-position: 0 0, 40px 60px, 130px 270px;
-
-    min-height: 100vh;
-    width: 100%;    
-}
-
-p {
-    margin:1em 0;
-}
-
-h2 {
-    margin-bottom:1em;
-}
-
-ul {
-  list-style-position: outside;
-  padding-left: 1em;
-}
-
-ul li {
-  text-indent: -1em;  
-  padding-left: 1em;  
-}
-
-main {
-    width: 100%;
-    position: relative;
-    padding-top: 100vh;
-}
-
-section {
-    position: relative;
-    width: 80vw;
-    max-width: 50em;
-    margin: auto;
-    padding: 2em 0;
-}
 
 #cards {
     --numcards: 3;
@@ -340,10 +316,57 @@ section {
 }
 /* Bij reduce motion aan draait de aardbol niet */
 
+
+/* satellite gedeelte  */
+@property --scale {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 1;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg) scale(var(--scale));
+  }
+  12.5% {
+    transform: translate(5px, -5px) rotate(3deg) scale(var(--scale));
+  }
+  25% {
+    transform: translate(10px, -10px) rotate(0deg) scale(var(--scale));
+  }
+  50% {
+    transform: translate(0px, -20px) rotate(-3deg) scale(var(--scale));
+  }
+  75% {
+    transform: translate(-10px, -10px) rotate(1deg) scale(var(--scale));
+  }
+  87.5% {
+    transform: translate(5px, -5px) rotate(2deg) scale(var(--scale));
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg) scale(var(--scale));
+  }
+}
+
+
+
+
 .foto-van-satellite {
     min-width: 10em;
     max-width: 30vmin;
     animation: float 10s linear infinite;
+    cursor: pointer;
+    --scale: 1;
+    transition: --scale 2s ease-in-out;
+
+    &:hover {
+        --scale: 1.5;
+        animation-play-state: paused;
+    }
+
+    path:hover {
+        filter: brightness(1.4);
+    }
 }
 
 .div-van-satellite {
@@ -352,5 +375,5 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+
 }
