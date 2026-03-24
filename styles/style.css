@@ -13,22 +13,32 @@
     --color-accent-1: light-dark( #EB5C35, #EB5C35);
     --color-accent-2: light-dark( #d43f16, #d43f16);
 
-    --color-text-main: light-dark( #ffffff, #000);
+    --color-text-main: light-dark( #ffffff, #ffffff);
     --color-text-2: light-dark( #EB5C35, #EB5C35);
+    
+    --star-color: white;
+    --star-shadow-1: rgb(255 255 255 / 0.2);
+    --star-shadow-2: rgb(255 255 255 / 0.15);
+    --star-shadow-3: rgb(255 255 255 / 0.1);
+
+    --card-glow: 0 8px 30px rgba(0, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.1);
+    --card-hover-glow: 0 15px 40px rgba(0, 255, 255, 0.3), 0 0 25px rgba(255, 255, 255, 0.2);
+    --card-border: rgba(0, 255, 255, 0.3);
+    --card-background: rgba(25, 25, 40, 0.9);
 }
 
 body {
 
-    background-color: #181932;
+    background-color: var(--color-background);
     background-image: 
-        radial-gradient(white, rgb(255 255 255 / 0.2) 5px, transparent 3px),
-        radial-gradient(white, rgb(255 255 255 / 0.15) 2px, transparent 2px),
-        radial-gradient(white, rgb(255 255 255 / 0.1) 4px, transparent 3px);
+        radial-gradient(var(--star-color), var(--star-shadow-1) 5px, transparent 3px),
+        radial-gradient(var(--star-color), var(--star-shadow-2) 2px, transparent 2px),
+        radial-gradient(var(--star-color), var(--star-shadow-3) 4px, transparent 3px);
     
     background-size: 550px 550px, 350px 350px, 250px 250px;
     background-position: 0 0, 40px 60px, 130px 270px;
 
-    min-height: 100vh;
+    min-height: 1000vh;
     width: 100%;    
   
     color: var(--color-text-main);
@@ -89,9 +99,9 @@ section {
 
         background-color: #181932;
         background-image: 
-            radial-gradient(white, rgb(255 255 255 / 0.2) 5px, transparent 3px),
-            radial-gradient(white, rgb(255 255 255 / 0.15) 2px, transparent 2px),
-            radial-gradient(white, rgb(255 255 255 / 0.1) 4px, transparent 3px);
+        radial-gradient(var(--star-color), var(--star-shadow-1) 5px, transparent 3px),
+        radial-gradient(var(--star-color), var(--star-shadow-2) 2px, transparent 2px),
+        radial-gradient(var(--star-color), var(--star-shadow-3) 4px, transparent 3px);
         background-size: 550px 550px, 350px 350px, 250px 250px;
         background-position: 0 0, 40px 60px, 130px 270px;
 
@@ -207,36 +217,43 @@ section {
 
 
 
-
+/* Bron: https://scroll-driven-animations.style/demos/stacking-cards/css/ */
 #cards {
     --numcards: 3;
     width: 80%;
     margin: 0 auto;
     padding: 2em 0;
     view-timeline-name: --cards-element-scrolls-in-body;
+
+
+    .card {
+        position: sticky;
+        margin-bottom: 2em;
+        padding: 2em;
+        background: var(--card-background);
+        border-radius: 12px; 
+        box-shadow: var(--card-glow); 
+        border: 1px solid var(--card-border);
+        backdrop-filter: blur(5px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transform-origin: top; /* scale vanaf bovenkant */
+
+        --index0: calc(var(--index) - 1);
+        --reverse-index0: calc(var(--numcards) - var(--index0));
+        z-index: calc(var(--index0));
+        top: calc(20vh + var(--index0) * 2em);
+
+        /* Animatie over scroll */
+        animation: scale linear forwards;
+        animation-timeline: --cards-element-scrolls-in-body;
+        animation-range: exit-crossing calc(var(--index0)/var(--numcards)*100%) exit-crossing calc(var(--index)/var(--numcards)*100%);
+    }
+        
+        .card:hover {
+            box-shadow: var(--card-hover-glow);
+        }    
 }
 
-.card {
-    color: black;
-    position: sticky; /* blijft sticky voor animatie */
-    margin-bottom: 2em;
-    padding: 2em;
-    background: #D9D9D9;
-    border-radius: 8px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-
-    transform-origin: top; /* scale vanaf bovenkant */
-
-    --index0: calc(var(--index) - 1);
-    --reverse-index0: calc(var(--numcards) - var(--index0));
-    z-index: calc(var(--index0));
-    top: calc(20vh + var(--index0) * 2em);
-
-    /* Animatie over scroll */
-    animation: scale linear forwards;
-    animation-timeline: --cards-element-scrolls-in-body;
-    animation-range: exit-crossing calc(var(--index0)/var(--numcards)*100%) exit-crossing calc(var(--index)/var(--numcards)*100%);
-}
 
 @keyframes scale {
     to {
