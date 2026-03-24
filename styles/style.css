@@ -256,9 +256,13 @@ section {
 #cards {
     --numcards: 3;
     width: 80%;
+    @media (max-width:400px) {
+            width:90%;
+        }
     margin: 0 auto;
     padding: 2em 0;
     view-timeline-name: --cards-element-scrolls-in-body;
+    transition: width 1s ease;
 
 
     .card {
@@ -270,13 +274,20 @@ section {
         box-shadow: var(--card-glow); 
         border: 1px solid var(--card-border);
         backdrop-filter: blur(5px);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, top 0.3s ease;
         transform-origin: top; /* scale vanaf bovenkant */
 
+        --card-offset:20vh;
+        @media (max-width:500px) {
+            --card-offset:10vh;
+        }
+        @media (max-width:400px) {
+            --card-offset:5vh;
+        }
         --index0: calc(var(--index) - 1);
         --reverse-index0: calc(var(--numcards) - var(--index0));
         z-index: calc(var(--index0));
-        top: calc(20vh + var(--index0) * 2em);
+        top: calc(var(--card-offset) + var(--index0) * 2em);
 
         /* Animatie over scroll */
         animation: scale linear forwards;
