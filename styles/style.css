@@ -64,8 +64,26 @@ body {
 
     }
 
-    header img{
-        margin: 1rem;
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        img{
+            margin: 1rem;
+        }
+    }
+}
+
+/* Als mensen geen mooie cursor  willen */
+html:has(input[type="checkbox"]:not(:checked)) body {
+    cursor: url('../images/ufo-blanco.png'), auto;
+}
+
+html:has(input[type="checkbox"]:checked) body {
+    cursor: default;
+
+    &::scroll-button(*), .foto-van-satellite  {
+        cursor: pointer;
     }
 }
 
