@@ -178,9 +178,13 @@ section {
     height: 40%;
 }
 
+
+/* =========================================
+    Alles wat met de aardbol te maken heeft
+   ========================================= */
 .earth-image {
-    width: 700px;
-    height: 700px;
+    width: 120vw;
+    aspect-ratio: 1 / 1;
     position: fixed;
     z-index: 100;
     bottom: 0;
@@ -197,11 +201,12 @@ section {
         transform: translate(-50%, 70%) rotate(360deg);
     }
 }
+/* Zorgt dat de aardbol draait */
 
 @media (min-width: 700px) {
     .earth-image {
-        width: 1200px;
-        height: 1200px;
+        width: 120vw;
+        
     }
 
     @keyframes rotate-earth {
@@ -216,8 +221,8 @@ section {
 
 @media (min-width: 1050px) {
     .earth-image {
-        width: 1700px;
-        height: 1700px;
+        width: 120vw;
+        
     }
 
     @keyframes rotate-earth {
@@ -229,8 +234,16 @@ section {
     }
     }
 }
+/* Zorgt dat als het scherm groter of kleiner word de aarbol ook aanpast */
 
-
+@media (prefers-reduced-motion: reduce) {
+    .earth-image {
+        animation: none;
+        transform: translate(-50%, 85%);
+        opacity: 1 !important;
+    }
+}
+/* Bij reduce motion aan draait de aardbol niet */
 
 .foto-satellite {
     min-width: 10em;
