@@ -13,21 +13,418 @@
     --color-accent-1: light-dark( #EB5C35, #EB5C35);
     --color-accent-2: light-dark( #d43f16, #d43f16);
 
-    --color-text-main: light-dark( #000000, #ffffff);
+    --color-text-main: light-dark( #ffffff, #ffffff);
     --color-text-2: light-dark( #EB5C35, #EB5C35);
+    
+    --star-color: white;
+    --star-shadow-1: rgb(255 255 255 / 0.2);
+    --star-shadow-2: rgb(255 255 255 / 0.15);
+    --star-shadow-3: rgb(255 255 255 / 0.1);
 
+    --card-glow: 0 8px 30px rgba(0, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.1);
+    --card-hover-glow: 0 15px 40px rgba(0, 255, 255, 0.3), 0 0 25px rgba(255, 255, 255, 0.2);
+    --card-border: rgba(0, 255, 255, 0.3);
+    --card-background: rgba(25, 25, 40, 0.9);
 }
 
+@font-face {
+    font-family: orbitron;
+    src: url(/fonts/Orbitron-VariableFont_wght.ttf);
+} 
+/* https://fonts.google.com/specimen/Orbitron?preview.script=Latn */
+
+@font-face {
+    font-family: rajdhani;
+    src: url(/fonts/Rajdhani-Regular.ttf);
+}
+/* https://fonts.google.com/specimen/Rajdhani?preview.script=Latn */
+
 body {
-    background-color: #181932;
+
+    background-color: var(--color-background);
     background-image: 
-        radial-gradient(white, rgb(255 255 255 / 0.2) 5px, transparent 3px),
-        radial-gradient(white, rgb(255 255 255 / 0.15) 2px, transparent 2px),
-        radial-gradient(white, rgb(255 255 255 / 0.1) 4px, transparent 3px);
+        radial-gradient(var(--star-color), var(--star-shadow-1) 5px, transparent 3px),
+        radial-gradient(var(--star-color), var(--star-shadow-2) 2px, transparent 2px),
+        radial-gradient(var(--star-color), var(--star-shadow-3) 4px, transparent 3px);
     
     background-size: 550px 550px, 350px 350px, 250px 250px;
     background-position: 0 0, 40px 60px, 130px 270px;
 
-    height: 100vh;
-    width: 0;    
+    cursor: url('../images/space-ufo-explore-icon.png'), auto;
+
+
+    min-height: 100vh;
+    width: 100%;    
+  
+    color: var(--color-text-main);
+
+    h1 {
+        color: var(--color-text-2);
+        font-family: orbitron;
+
+    }
+
+    header img{
+        margin: 1rem;
+    }
+}
+
+p {
+    margin:1em 0;
+    font-family: rajdhani;
+}
+
+h2 {
+    margin-bottom:1em;
+    font-family: orbitron;
+}
+
+h3 {
+    font-family: orbitron;
+}
+
+ul {
+  list-style-position: outside;
+  padding-left: 1em;
+}
+
+ul li {
+  text-indent: -1em;  
+  padding-left: 1em;  
+}
+
+main {
+    width: 100%;
+    position: relative;
+    padding-top: 100vh;
+}
+
+section {
+    position: relative;
+    width: 80vw;
+    max-width: 50em;
+    margin: auto;
+    padding: 2em 0;
+
+    &:first-of-type {
+        text-align: center;
+    }
+}
+
+
+/* MARK: Section foto's */
+.section-images{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+    position: relative;
+    width: 80vw;
+    max-width: 50em;
+    margin: auto;
+
+    view-timeline-name: --section-move-images;
+    view-timeline-axis: block;
+  
+    div {
+        width: 120vw;
+        overflow-x:scroll;
+        aspect-ratio: 4/1;
+
+        background-color: #181932;
+        background-image: 
+        radial-gradient(var(--star-color), var(--star-shadow-1) 5px, transparent 3px),
+        radial-gradient(var(--star-color), var(--star-shadow-2) 2px, transparent 2px),
+        radial-gradient(var(--star-color), var(--star-shadow-3) 4px, transparent 3px);
+        background-size: 550px 550px, 350px 350px, 250px 250px;
+        background-position: 0 0, 40px 60px, 130px 270px;
+
+
+        &:nth-of-type(1){
+            height: 10rem;
+            width: 180vw;
+            position: absolute;
+            top: 8%;
+            z-index: 2;
+
+            /* https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Masking */
+            mask-image: radial-gradient(ellipse at bottom,rgba(92, 90, 229, 0) 60%, rgba(244, 71, 113, 1) 60%);
+
+        }
+
+        &:nth-of-type(2) {
+            position: absolute;
+            top: 65%;
+            border-radius: 50%;
+        }
+    }
+
+    > ul{
+        display: flex;
+        width: max-content;
+        height: fit-content;
+        gap: 1rem;
+        padding-left: 1rem;
+        overflow-x: visible;
+        position: relative;
+        margin: 3rem 0;
+
+
+        will-change: transform;
+        animation: move-images linear forwards;
+
+        animation-timeline: --section-move-images;
+        animation-range: contain 0% contain 200%;
+
+        li {
+            list-style-type: none;
+
+            > img {
+                height: 12rem;
+            }
+        }
+    }
+}
+
+
+@keyframes move-images {
+   from {
+        transform: translateX(0);
+   } to {
+        transform: translateX(-50%);
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    .section-images {
+        overflow-y: hidden;
+        overflow-x: hidden;
+        height: fit-content;
+
+        > ul {
+            animation: none;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            
+            width: 100vw;
+
+            /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-button */
+            &::scroll-button(*) {
+                border: 0;
+                font-size: 2rem;
+                color: white;
+                cursor: pointer;
+                background: none;
+                z-index: 3;
+            }    
+
+            &::scroll-button(left){
+                content: "<";
+                position: absolute;
+                left: 0;
+                top: 80%;
+                transform: translateY(-50%);
+
+            }
+
+              &::scroll-button(right){
+                content: ">";
+                position: absolute;
+                right: 0;
+                top: 80%;
+                transform: translateY(-50%);
+
+            }
+
+
+            li {
+                scroll-snap-align: center;
+
+            }
+
+        }
+    }
+}
+
+
+
+
+
+/* Bron: https://scroll-driven-animations.style/demos/stacking-cards/css/ */
+#cards {
+    --numcards: 3;
+    width: 80%;
+    margin: 0 auto;
+    padding: 2em 0;
+    view-timeline-name: --cards-element-scrolls-in-body;
+
+
+    .card {
+        position: sticky;
+        margin-bottom: 2em;
+        padding: 2em;
+        background: var(--card-background);
+        border-radius: 12px; 
+        box-shadow: var(--card-glow); 
+        border: 1px solid var(--card-border);
+        backdrop-filter: blur(5px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transform-origin: top; /* scale vanaf bovenkant */
+
+        --index0: calc(var(--index) - 1);
+        --reverse-index0: calc(var(--numcards) - var(--index0));
+        z-index: calc(var(--index0));
+        top: calc(20vh + var(--index0) * 2em);
+
+        /* Animatie over scroll */
+        animation: scale linear forwards;
+        animation-timeline: --cards-element-scrolls-in-body;
+        animation-range: exit-crossing calc(var(--index0)/var(--numcards)*100%) exit-crossing calc(var(--index)/var(--numcards)*100%);
+    }
+        
+        .card:hover {
+            box-shadow: var(--card-hover-glow);
+        }    
+}
+
+
+@keyframes scale {
+    to {
+        transform: scale(calc(1 - 0.05 * var(--reverse-index0)));
+    }
+}
+
+.logo {
+    width: 40%;
+    height: 40%;
+}
+
+
+/* =========================================
+    Alles wat met de aardbol te maken heeft
+   ========================================= */
+.earth-image {
+    width: 120vw;
+    aspect-ratio: 1 / 1;
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    left: 50%;
+    animation: rotate-earth 40s linear infinite;
+    transition: width 0.4s ease, height 0.4s ease;
+}
+
+@keyframes rotate-earth {
+    0% {
+        transform: translate(-50%, 70%) rotate(0);
+    }
+    100% {
+        transform: translate(-50%, 70%) rotate(360deg);
+    }
+}
+/* Zorgt dat de aardbol draait */
+
+@media (min-width: 700px) {
+    .earth-image {
+        width: 120vw;
+        
+    }
+
+    @keyframes rotate-earth {
+        0% {
+        transform: translate(-50%, 80%) rotate(0);
+    }
+    100% {
+        transform: translate(-50%, 80%) rotate(360deg);
+    }
+    }
+}
+
+@media (min-width: 1050px) {
+    .earth-image {
+        width: 120vw;
+        
+    }
+
+    @keyframes rotate-earth {
+        0% {
+        transform: translate(-50%, 85%) rotate(0);
+    }
+    100% {
+        transform: translate(-50%, 85%) rotate(360deg);
+    }
+    }
+}
+/* Zorgt dat als het scherm groter of kleiner word de aarbol ook aanpast */
+
+@media (prefers-reduced-motion: reduce) {
+    .earth-image {
+        animation: none;
+        transform: translate(-50%, 85%);
+        opacity: 1 !important;
+    }
+}
+/* Bij reduce motion aan draait de aardbol niet */
+
+
+/* satellite gedeelte  */
+@property --scale {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 1;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg) scale(var(--scale));
+  }
+  12.5% {
+    transform: translate(5px, -5px) rotate(3deg) scale(var(--scale));
+  }
+  25% {
+    transform: translate(10px, -10px) rotate(0deg) scale(var(--scale));
+  }
+  50% {
+    transform: translate(0px, -20px) rotate(-3deg) scale(var(--scale));
+  }
+  75% {
+    transform: translate(-10px, -10px) rotate(1deg) scale(var(--scale));
+  }
+  87.5% {
+    transform: translate(5px, -5px) rotate(2deg) scale(var(--scale));
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg) scale(var(--scale));
+  }
+}
+
+
+
+
+.foto-van-satellite {
+    min-width: 10em;
+    max-width: 30vmin;
+    animation: float 10s linear infinite;
+    cursor: pointer;
+    --scale: 1;
+    transition: --scale 2s ease-in-out;
+
+    &:hover {
+        --scale: 1.5;
+        animation-play-state: paused;
+    }
+
+    path:hover {
+        filter: brightness(1.4);
+    }
+}
+
+.div-van-satellite {
+    position: absolute;
+    top: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
