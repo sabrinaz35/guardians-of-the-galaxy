@@ -50,7 +50,7 @@ body {
     background-size: 550px 550px, 350px 350px, 250px 250px;
     background-position: 0 0, 40px 60px, 130px 270px;
 
-    cursor: url('../images/space-ufo-explore-icon.png'), auto;
+    cursor: url('../images/ufo-blanco.png'), auto;
 
 
     min-height: 100vh;
@@ -214,7 +214,7 @@ section {
                 border: 0;
                 font-size: 2rem;
                 color: white;
-                cursor: pointer;
+                cursor: url('../images/ufo-straal.png'), pointer;
                 background: none;
                 z-index: 3;
             }    
@@ -412,7 +412,7 @@ section {
     .foto-van-satellite {
 
         animation: float 10s linear infinite;
-        cursor: pointer;
+        cursor: url('../images/ufo-straal.png'), pointer;
         --scale: 1;
         transition: --scale 2s ease-in-out;
         height: 50vmin;
