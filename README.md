@@ -36,3 +36,6 @@ Uiteindelijk hebben we het volgende voor elkaar weten te krijgen.
 
 ## 🗓️ Maandag 24 maart 
 ### 🧱 Verder werken
+We hebben een eerste opzet gemaakt via Figma om iedereen een duidelijk beeld te geven.
+
+<img src="images/readme-images/23-03-idee1-figma.png" alt="Schetsen van eerste idee uitgewerkt in figma">
