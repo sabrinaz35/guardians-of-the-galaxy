@@ -106,6 +106,60 @@ body {
     }
 }
 
+
+@media (prefers-reduced-motion: reduce) {
+    .section-images {
+        overflow-y: hidden;
+        overflow-x: hidden;
+        height: fit-content;
+
+        > ul {
+            animation: none;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            
+            width: 100vw;
+
+            /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-button */
+            &::scroll-button(*) {
+                border: 0;
+                font-size: 2rem;
+                color: white;
+                cursor: pointer;
+                background: none;
+                z-index: 3;
+            }    
+
+            &::scroll-button(left){
+                content: "<";
+                position: absolute;
+                left: 0;
+                top: 80%;
+                transform: translateY(-50%);
+
+            }
+
+              &::scroll-button(right){
+                content: ">";
+                position: absolute;
+                right: 0;
+                top: 80%;
+                transform: translateY(-50%);
+
+            }
+
+
+            li {
+                scroll-snap-align: center;
+
+            }
+
+        }
+    }
+}
+
+
 @keyframes float {
   0% {
     transform: translate(0px, 0px);
