@@ -50,7 +50,7 @@ body {
     background-size: 550px 550px, 350px 350px, 250px 250px;
     background-position: 0 0, 40px 60px, 130px 270px;
 
-    cursor: url('../images/space-ufo-explore-icon.png'), auto;
+    cursor: url('../images/ufo-blanco.png'), auto;
 
 
     min-height: 100vh;
@@ -214,7 +214,7 @@ section {
                 border: 0;
                 font-size: 2rem;
                 color: white;
-                cursor: pointer;
+                cursor: url('../images/ufo-straal.png'), pointer;
                 background: none;
                 z-index: 3;
             }    
@@ -400,31 +400,32 @@ section {
 }
 
 
-
-
-.foto-van-satellite {
-    min-width: 10em;
-    max-width: 30vmin;
-    animation: float 10s linear infinite;
-    cursor: pointer;
-    --scale: 1;
-    transition: --scale 2s ease-in-out;
-
-    &:hover {
-        --scale: 1.5;
-        animation-play-state: paused;
-    }
-
-    path:hover {
-        filter: brightness(1.4);
-    }
-}
-
 .div-van-satellite {
     position: absolute;
-    top: 20vh;
+    top: 1vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    
+
+    .foto-van-satellite {
+
+        animation: float 10s linear infinite;
+        cursor: url('../images/ufo-straal.png'), pointer;
+        --scale: 1;
+        transition: --scale 2s ease-in-out;
+        height: 50vmin;
+        z-index: 99999;
+
+        &:hover {
+            --scale: 1.5;
+            animation-play-state: paused;
+        }
+
+        path:hover {
+            filter: brightness(1.4);
+        }
+    }
 
 }
