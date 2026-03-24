@@ -273,7 +273,6 @@ section {
     top: 10%;
     left: 50%;
     animation: rotate-earth 15s linear infinite;
-    display: none;
 }
 
 @keyframes rotate-earth {
