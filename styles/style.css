@@ -90,7 +90,8 @@ ul {
 
 ul li {
   text-indent: -1em;  
-  padding-left: 1em;  
+  padding-left: 1em; 
+  font-family: rajdhani; 
 }
 
 main {
