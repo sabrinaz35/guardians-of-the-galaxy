@@ -465,14 +465,18 @@ model-viewer {
     border: 2px solid #0061ED;
     cursor: pointer;
     position: relative;
-    animation: pulse 2s ease-in-out infinite;
+    animation: pulse-popover 2s ease-in-out infinite;
+
+    .too-long {
+    width: 400px;
+}
 }
 
 .hotspot-popover {
     display: none;
     position: absolute;
-    bottom: 24px;
-    left: 50%;
+    /* bottom: 24px; */
+    /* left: 50%; */
     transform: translateX(-50%);
     background: rgba(25, 25, 40, 0.95);
     border: 1px solid rgba(0, 255, 255, 0.3);
@@ -492,6 +496,12 @@ model-viewer {
     p {
         font-size: 13px;
         margin: 0;
+        color: var(--color-text-main);
+    }
+
+    img {
+        width: 10vw;
+        height: 10vh;
     }
 }
 
@@ -499,7 +509,7 @@ model-viewer {
     display: block;
 }
 
-@keyframes pulse {
+@keyframes pulse-popover {
     0%, 100% { box-shadow: 0 0 0 4px rgba(0, 97, 237, 0.3); }
     50%       { box-shadow: 0 0 0 8px rgba(0, 97, 237, 0.1); }
 }

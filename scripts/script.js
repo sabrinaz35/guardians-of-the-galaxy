@@ -14,6 +14,7 @@ window.addEventListener('scroll', () => {
     aarde.style.opacity = nieuweOpacity
 })
 
+// deze code gegenereerd om de data positions te vinden van de 3d element met prompt; "hoe kan ik punten van mijn 3d element vinden om te gebruiken voor popovers etc"
 // const viewer = document.getElementById('satellite-viewer');
 
 // viewer.addEventListener('load', () => {
