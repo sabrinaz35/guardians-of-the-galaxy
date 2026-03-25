@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
     <title>Document</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+ 
 </head>
 
 <body>
@@ -16,11 +18,32 @@
     <div class="black-hole"></div> 
     <main>
         <img class="earth-image" src="images/aardbol-groot.png" alt="SVG plaatje van de aarde">
-        
+      
+        <model-viewer
+            id="satellite-viewer"
+            src="/nabula-3d.glb"
+            auto-rotate
+            auto-rotate-delay="0"
+            rotation-per-second="8deg"
+            camera-controls
+            disable-zoom
+            interaction-prompt="none"
+            exposure="1">
+
+            <button class="hotspot" slot="hotspot-vleugel" data-position="-0.703 -0.113 0.271" data-normal="0.000 0.000 1.000">
+                <div class="hotspot-popover">
+                    <h3>Zonnepaneel</h3>
+                    <p>Levert energie aan boord van de satelliet.</p>
+                </div>
+            </button>
+
+        </model-viewer>
         
 
+        
+        <!-- 
         <div class="div-van-satellite">
-            <!-- foto gemaakt met ai, en zelf aangepast, prompt: "maak van de satellite een svg die ik kan downloaden", ik heb dit daarna in figma aangepast naar mijn eigen stijl -->
+            <!-- foto gemaakt met ai, en zelf aangepast, prompt: "maak van de satellite een svg die ik kan downloaden", ik heb dit daarna in figma aangepast naar mijn eigen stijl
             <svg class="foto-van-satellite" xmlns="http://www.w3.org/2000/svg" width="680" height="520" viewBox="0 0 680 520" fill="none">
                 <g clip-path="url(#clip0_19_270)">
                 <mask id="mask0_19_270" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="680" height="520">
@@ -40,7 +63,7 @@
                 <path opacity="0.7" d="M480 480.8C480.442 480.8 480.8 480.442 480.8 480C480.8 479.558 480.442 479.2 480 479.2C479.558 479.2 479.2 479.558 479.2 480C479.2 480.442 479.558 480.8 480 480.8Z" fill="#AAC4FF"/>
                 <path opacity="0.5" d="M160 140.6C160.331 140.6 160.6 140.331 160.6 140C160.6 139.669 160.331 139.4 160 139.4C159.669 139.4 159.4 139.669 159.4 140C159.4 140.331 159.669 140.6 160 140.6Z" fill="white"/>
                 <path opacity="0.6" d="M510 130.7C510.387 130.7 510.7 130.387 510.7 130C510.7 129.613 510.387 129.3 510 129.3C509.613 129.3 509.3 129.613 509.3 130C509.3 130.387 509.613 130.7 510 130.7Z" fill="white"/>
-                <path d="M232 195H63C61.3431 195 60 196.343 60 198V322C60 323.657 61.3431 325 63 325H232C233.657 325 235 323.657 235 322V198C235 196.343 233.657 195 232 195Z" fill="url(#paint0_linear_19_270)" stroke="#C8860A" stroke-width="1.5"/>
+                <path class="hover-nebula" d="M232 195H63C61.3431 195 60 196.343 60 198V322C60 323.657 61.3431 325 63 325H232C233.657 325 235 323.657 235 322V198C235 196.343 233.657 195 232 195Z" fill="url(#paint0_linear_19_270)" stroke="#C8860A" stroke-width="1.5"/>
                 <path d="M95 195V325" stroke="#1E3050" stroke-width="0.8"/>
                 <path d="M130 195V325" stroke="#1E3050" stroke-width="0.8"/>
                 <path d="M165 195V325" stroke="#1E3050" stroke-width="0.8"/>
@@ -70,7 +93,7 @@
                 <path opacity="0.9" d="M234 293H201V324H234V293Z" fill="#1A2840"/>
                 <path d="M232 195H63C61.3431 195 60 196.343 60 198V322C60 323.657 61.3431 325 63 325H232C233.657 325 235 323.657 235 322V198C235 196.343 233.657 195 232 195Z" stroke="url(#paint1_linear_19_270)" stroke-width="2"/>
                 <path d="M274 249H234V259H274V249Z" fill="#333333" stroke="#C8860A"/>
-                <path d="M617 195H448C446.343 195 445 196.343 445 198V322C445 323.657 446.343 325 448 325H617C618.657 325 620 323.657 620 322V198C620 196.343 618.657 195 617 195Z" fill="url(#paint2_linear_19_270)" stroke="#C8860A" stroke-width="1.5"/>
+                <path class="hover-nebula" d="M617 195H448C446.343 195 445 196.343 445 198V322C445 323.657 446.343 325 448 325H617C618.657 325 620 323.657 620 322V198C620 196.343 618.657 195 617 195Z" fill="url(#paint2_linear_19_270)" stroke="#C8860A" stroke-width="1.5"/>
                 <path d="M480 195V325" stroke="#1E3050" stroke-width="0.8"/>
                 <path d="M515 195V325" stroke="#1E3050" stroke-width="0.8"/>
                 <path d="M550 195V325" stroke="#1E3050" stroke-width="0.8"/>
@@ -98,7 +121,7 @@
                 <path opacity="0.9" d="M549 293H516V324H549V293Z" fill="#1A2840"/>
                 <path opacity="0.9" d="M584 293H551V324H584V293Z" fill="#025BDB"/>
                 <path opacity="0.9" d="M619 293H586V324H619V293Z" fill="#1A2840"/>
-                <path d="M617 195H448C446.343 195 445 196.343 445 198V322C445 323.657 446.343 325 448 325H617C618.657 325 620 323.657 620 322V198C620 196.343 618.657 195 617 195Z" stroke="url(#paint3_linear_19_270)" stroke-width="2"/>
+                <path class="hover-nebula" d="M617 195H448C446.343 195 445 196.343 445 198V322C445 323.657 446.343 325 448 325H617C618.657 325 620 323.657 620 322V198C620 196.343 618.657 195 617 195Z" stroke="url(#paint3_linear_19_270)" stroke-width="2"/>
                 <path d="M446 249H406V259H446V249Z" fill="#333333" stroke="#C8860A"/>
                 <path d="M402 130H278C275.791 130 274 131.791 274 134V386C274 388.209 275.791 390 278 390H402C404.209 390 406 388.209 406 386V134C406 131.791 404.209 130 402 130Z" fill="url(#paint4_linear_19_270)" stroke="#555555"/>
                 <path opacity="0.9" d="M282 130H274V390H282V130Z" fill="#C8860A"/>
@@ -110,20 +133,20 @@
                 <path d="M282 305H398" stroke="#444444" stroke-width="0.7"/>
                 <path d="M282 340H398" stroke="#444444" stroke-width="0.7"/>
                 <path d="M282 375H398" stroke="#444444" stroke-width="0.7"/>
-                <path d="M323 315H287C285.895 315 285 315.895 285 317V337C285 338.105 285.895 339 287 339H323C324.105 339 325 338.105 325 337V317C325 315.895 324.105 315 323 315Z" fill="#1A1A1A" stroke="#666666" stroke-width="0.8"/>
-                <path d="M393 315H357C355.895 315 355 315.895 355 317V337C355 338.105 355.895 339 357 339H393C394.105 339 395 338.105 395 337V317C395 315.895 394.105 315 393 315Z" fill="#1A1A1A" stroke="#666666" stroke-width="0.8"/>
+                <path class="hover-nebula" d="M323 315H287C285.895 315 285 315.895 285 317V337C285 338.105 285.895 339 287 339H323C324.105 339 325 338.105 325 337V317C325 315.895 324.105 315 323 315Z" fill="#1A1A1A" stroke="#666666" stroke-width="0.8"/>
+                <path class="hover-nebula" d="M393 315H357C355.895 315 355 315.895 355 317V337C355 338.105 355.895 339 357 339H393C394.105 339 395 338.105 395 337V317C395 315.895 394.105 315 393 315Z" fill="#1A1A1A" stroke="#666666" stroke-width="0.8"/>
                 <path d="M393 350H287C285.895 350 285 350.895 285 352V366C285 367.105 285.895 368 287 368H393C394.105 368 395 367.105 395 366V352C395 350.895 394.105 350 393 350Z" fill="#222222" stroke="#555555" stroke-width="0.8"/>
                 <path opacity="0.9" d="M310 330C311.657 330 313 328.657 313 327C313 325.343 311.657 324 310 324C308.343 324 307 325.343 307 327C307 328.657 308.343 330 310 330Z" fill="#E84040"/>
                 <path opacity="0.9" d="M322 330C323.657 330 325 328.657 325 327C325 325.343 323.657 324 322 324C320.343 324 319 325.343 319 327C319 328.657 320.343 330 322 330Z" fill="#40E860"/>
                 <path opacity="0.9" d="M375 330C376.657 330 378 328.657 378 327C378 325.343 376.657 324 375 324C373.343 324 372 325.343 372 327C372 328.657 373.343 330 375 330Z" fill="#4080E8"/>
                 <path opacity="0.9" d="M387 330C388.657 330 390 328.657 390 327C390 325.343 388.657 324 387 324C385.343 324 384 325.343 384 327C384 328.657 385.343 330 387 330Z" fill="#40E860"/>
-                <path d="M367 210H313C311.343 210 310 211.343 310 213V277C310 278.657 311.343 280 313 280H367C368.657 280 370 278.657 370 277V213C370 211.343 368.657 210 367 210Z" fill="#2C2C2C" stroke="#888888"/>
-                <path d="M349 175H331C329.343 175 328 176.343 328 178V217C328 218.657 329.343 220 331 220H349C350.657 220 352 218.657 352 217V178C352 176.343 350.657 175 349 175Z" fill="#1A1A1A" stroke="#777777"/>
+                <path class="hover-nebula" d="M367 210H313C311.343 210 310 211.343 310 213V277C310 278.657 311.343 280 313 280H367C368.657 280 370 278.657 370 277V213C370 211.343 368.657 210 367 210Z" fill="#2C2C2C" stroke="#888888"/>
+                <path class="hover-nebula" d="M349 175H331C329.343 175 328 176.343 328 178V217C328 218.657 329.343 220 331 220H349C350.657 220 352 218.657 352 217V178C352 176.343 350.657 175 349 175Z" fill="#1A1A1A" stroke="#777777"/>
                 <path d="M340 180C346.627 180 352 177.761 352 175C352 172.239 346.627 170 340 170C333.373 170 328 172.239 328 175C328 177.761 333.373 180 340 180Z" fill="#0A0A0A" stroke="#888888"/>
                 <path d="M340 188C343.314 188 346 186.657 346 185C346 183.343 343.314 182 340 182C336.686 182 334 183.343 334 185C334 186.657 336.686 188 340 188Z" fill="#333333" stroke="#666666" stroke-width="0.7"/>
                 <path d="M314 220H310C308.895 220 308 220.895 308 222V258C308 259.105 308.895 260 310 260H314C315.105 260 316 259.105 316 258V222C316 220.895 315.105 220 314 220Z" fill="#383838" stroke="#666666" stroke-width="0.7"/>
                 <path d="M370 220H366C364.895 220 364 220.895 364 222V258C364 259.105 364.895 260 366 260H370C371.105 260 372 259.105 372 258V222C372 220.895 371.105 220 370 220Z" fill="#383838" stroke="#666666" stroke-width="0.7"/>
-                <path d="M391 65H289C286.791 65 285 66.7909 285 69V131C285 133.209 286.791 135 289 135H391C393.209 135 395 133.209 395 131V69C395 66.7909 393.209 65 391 65Z" fill="#7D7D7D" stroke="#666666"/>
+                <path class="hover-nebula" d="M391 65H289C286.791 65 285 66.7909 285 69V131C285 133.209 286.791 135 289 135H391C393.209 135 395 133.209 395 131V69C395 66.7909 393.209 65 391 65Z" fill="#7D7D7D" stroke="#666666"/>
                 <path d="M308 92C311.866 92 315 88.866 315 85C315 81.134 311.866 78 308 78C304.134 78 301 81.134 301 85C301 88.866 304.134 92 308 92Z" fill="#0A0A12" stroke="#888888"/>
                 <path d="M327 92C330.866 92 334 88.866 334 85C334 81.134 330.866 78 327 78C323.134 78 320 81.134 320 85C320 88.866 323.134 92 327 92Z" fill="#0A0A12" stroke="#888888"/>
                 <path d="M346 92C349.866 92 353 88.866 353 85C353 81.134 349.866 78 346 78C342.134 78 339 81.134 339 85C339 88.866 342.134 92 346 92Z" fill="#0A0A12" stroke="#888888"/>
@@ -204,7 +227,7 @@
                 </clipPath>
                 </defs>
             </svg>
-        </div>
+        </div> -->
       
         <section>
             <h1>NEBULA - Xplorer</h1>
