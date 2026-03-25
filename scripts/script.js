@@ -119,6 +119,11 @@ document.addEventListener('DOMContentLoaded', () => {
             cyd.forEach(el => {
                 el.style.opacity = '0.1'; // laag zichtbaar
             });
+        } else if (text.endsWith('MADEBY')) {
+            const madeby = document.querySelectorAll('.madeby');
+            madeby.forEach(el => {
+                el.style.opacity = '0.2'; // laag zichtbaar
+            });
         }
         else {
             const sanne = document.querySelectorAll('.sanne');
@@ -132,6 +137,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const cyd = document.querySelectorAll('.cyd');
             cyd.forEach(el => {
                 el.style.opacity = '0';
+            });
+            const madeby = document.querySelectorAll('.madeby');
+            madeby.forEach(el => {
+                el.style.opacity = '0'; // laag zichtbaar
             });
         }
     });
