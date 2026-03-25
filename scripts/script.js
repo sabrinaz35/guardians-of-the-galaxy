@@ -119,10 +119,17 @@ document.addEventListener('DOMContentLoaded', () => {
             cyd.forEach(el => {
                 el.style.opacity = '0.1'; // laag zichtbaar
             });
-        } else if (text.endsWith('MADEBY')) {
+        } else if (text.endsWith('MADEBY')|| text.endsWith('MADE BY')|| text.endsWith('GEMAAKT DOOR')
+            || text.endsWith('GEMAAKTDOOR')|| text.endsWith('ALIEN')) {
             const madeby = document.querySelectorAll('.madeby');
             madeby.forEach(el => {
                 el.style.opacity = '0.2'; // laag zichtbaar
+            });
+        } else if (text.endsWith('RAKET')|| text.endsWith('ROCKET')) {
+            const raket = document.querySelectorAll('.raket');
+            
+            raket.forEach(el => {
+                el.style.left = '110%';
             });
         }
         else {
