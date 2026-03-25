@@ -418,15 +418,23 @@ section {
   }
 }
 
+.position-satellite {
+    position: relative;
+}
 
 .div-van-satellite {
-    position: absolute;
+    /* Positie ervan op telefoon */
+    position:static;
     top: 1vh;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     
+    /* Om een soepele overgang te creeeren bij het groter maken van het scherm */
+    /* transform: translateX(0) scale(1);
+    transition: left .8s ease, transform .8s ease; */
+
 
     .foto-van-satellite {
 
@@ -437,16 +445,47 @@ section {
         height: 50vmin;
         z-index: 99999;
 
-        &:hover {
+        /* &:hover {
             --scale: 1.5;
             animation-play-state: paused;
-        }
+        } */
 
         path:hover {
             filter: brightness(1.4);
         }
     }
 
+}
+
+@media (width>1000px) {
+        .div-van-satellite {
+            position: sticky;
+            top: .5vh;
+            z-index: 3;
+
+            animation: move-sattelite linear;
+            animation-timeline: view();
+            animation-range: cover 0% cover 100%;
+
+            /* transform: translateX(-40vw) scale(.5); */
+        } 
+
+    @media (prefers-reduced-motion: reduce) {
+        .div-van-satellite {
+            left: -40vw;
+
+            transform: none;
+            animation: none;
+        }  
+    }
+
+    @keyframes move-sattelite {
+        from {
+            transform: translateX(0) scale(1);
+        } to {
+            transform: translateX(-50vw) scale(.5);
+        }
+    }
 }
 
 /* 3d nebula gedeelte */
