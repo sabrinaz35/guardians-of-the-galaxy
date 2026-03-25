@@ -57,7 +57,7 @@ Als laatste hebben we ook een custom cursor gemaakt, van een ruimteschip, daarbi
 
 
 ## 🗓️ Maandag 24 maart 
-Vandaag de laatste puntjes op de i gezet. 
+Vandaag de laatste puntjes op de i zetten en easter eggs toevoegen. 
 
 
 
@@ -65,6 +65,7 @@ Vandaag de laatste puntjes op de i gezet.
 Uiteraard de gegeven informatie van de Nebula Xplorer in het teamskanaal.
 
 ### html bronnen
+- https://translate.google.com/?hl=nl&sl=nl&tl=it&op=translate
 
 ### css bronnen
 - https://fonts.google.com/specimen/Orbitron?preview.script=Latn 
