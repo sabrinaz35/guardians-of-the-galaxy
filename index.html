@@ -19,6 +19,8 @@
     <main>
         <img class="earth-image" src="images/aardbol-groot.png" alt="SVG plaatje van de aarde">
       
+        <!-- bron; https://modelviewer.dev/docs/ -->
+        <!-- bron: https://modelviewer.dev/examples/stagingandcameras/index.html -->
         <model-viewer
             id="satellite-viewer"
             src="./nabula-3d.glb"
@@ -27,9 +29,10 @@
             rotation-per-second="5deg"
             camera-controls
             disable-zoom
-            disable-tap
-            interaction-prompt="none"
-            exposure="1">
+            disable-tap>
+
+            <!-- Deze gegevens hieronder uit gekregen info gehaald en vertaald. Sommige woorden met google translate vertaald. -->
+            <!-- https://translate.google.com/?hl=nl&sl=nl&tl=it&op=translate -->
 
             <button class="hotspot" slot="hotspot-vleugel-L" data-position="-0.703 -0.113 0.271" data-normal="0.000 0.000 1.000">
                 <div class="hotspot-popover">
@@ -41,7 +44,7 @@
             <button class="hotspot" slot="hotspot-star-tracker" data-position="-0.040 0.525 0.491" data-normal="0.454 -0.177 0.873">
                 <div class="hotspot-popover too-long">
                     <h3>Star Trackers</h3>
-                    <p>De star trackers (ST's) worden extern gemonteerd vanwege hun grote diameter van de schotten. Uitsparingen in de dunne buitenbekleding zouden leiden tot hoge lokale spanningsconcentraties en de minimale afstand tussen de inzetstukken schenden. Er zijn twee ST's gemonteerd: één uitgelijnd met de kijkrichting van het wetenschappelijke instrument, de andere onder een hoek van 30°, waardoor continue hemelzichtbaarheid en houdingsbevestiging mogelijk is.</p>
+                    <p>De star trackers worden aan de buitenkant gemonteerd vanwege hun grote diameter van de schotten. </p>
                 </div>
             </button>
 
@@ -56,27 +59,22 @@
                 <div class="hotspot-popover too-long">
                     <h3>X-ray instrument</h3>
                     <img src="images/sron-images/images/satellite/xplorer-instrument.png" alt="xplorer instrument">
-
-                    <p>
-                        The X-ray instrument is the payload of this mission, which will be based on double reflecting Wolter type 1 mirror modules or concentrators, as depicted in Figure 1, leading to a focal length of 85cm. We will use off-the-shelf Silicon Drift Detectors (SDD) each capturing the photons of one concentrator. 
-                        We will add dedicated SDDs for in-flight calibration and system verification.
-                        The signal captured by the SDDs will be processed by hot redundant instrument readout units (IRU). Dedicated digital signal processing will occur in the space graded IRUs, to record the observed energy including precise timing information.
-                    </p>
+                    <p>Het röntgeninstrument is de payload van deze missie. Waarmee we standaard siliciumdriftdetectoren (SDD's) gebruiken, die elk de fotonen van één concentrator opvangen.</p>
                 </div>
             </button>
 
             <button class="hotspot" slot="hotspot-Sband-antenna" data-position="-0.002 -0.294 0.373" data-normal="-0.014 -0.017 1.000">
                 <div class="hotspot-popover to-top">
                     <h3>S-band antennas</h3>
-                    <p>Voor de antennes zijn er twee typen: de hoogrendementszendantenne en de omnidirectionele ontvangstantenne. De gekozen hoogrendementsantenne is de iQspacecom S-band quad patch, met een versterking tot 11,5 dB. Deze heeft een kleinere halfbundelbreedte, maar levert een uitstekende versterking. Bovendien heeft hij een TRL 9-classificatie, is hij klein en licht. De omnidirectionele antenne is voorlopig die van iSISPACE. Deze levert tot 6,5 dB met een veel grotere halfbundelbreedte van 100 graden en heeft zijn sporen in de ruimtevaart verdiend.</p>
+                    <p>Voor de antennes zijn er twee typen: de hoogrendementszendantenne en de omindirectionele ontvangsantenne. </p>
                 </div>
             </button>
 
             <button class="hotspot" slot="hotspot-sun-sensor" data-position="-0.021 -0.463 0.378" data-normal="-0.386 -0.105 0.916">
                 <div class="hotspot-popover to-top">
                     <h3>Sun sensors</h3>
-                    <p>Tijdens de veilige modus is nauwkeurige positionering niet vereist, maar de oriëntatie ten opzichte van de zon moet wel bekend en constant gehouden worden. Hiervoor worden grove zonnesensoren gebruikt. Vier van deze sensoren zijn rondom het ruimtevaartuig gemonteerd om vrijwel de gehele hemel te bestrijken.</p>
-                </div>
+                    <p>Tijdens een safe mode is een nauwkeurige positionering niet vereist, maar de oriëntatie ten opzichte van de zon moet wel bekend en constant gehouden worden.</p>
+            </div>
             </button>
 
             <button class="hotspot" slot="hotspot-vleugel" data-position="-0.703 -0.113 0.271" data-normal="0.000 0.000 1.000">
@@ -89,8 +87,8 @@
             <button class="hotspot" slot="hotspot-seperation-plate" data-position="-0.001 -0.130 -0.498" data-normal="0.023 0.000 -1.000">
                 <div class="hotspot-popover to-top">
                     <h3>Seperation plate</h3>
-                    <p>De hoofdstructuur bestaat uit 6 aluminium platen. Deze zijn voorzien van machinaal bewerkte driehoekige uitsparingen om een ​​efficiënte lastoverdracht te vergemakkelijken. Dit vermindert de massa met behoud van de structurele integriteit en biedt gemakkelijke toegang tot de FPA tijdens integratie en uitlijning.</p>
-                </div>
+                    <p>De hoofdstuctuur bestaat uit 6 aluminium platen, deze zijn voorzien van driehoekvormige uitsparingen die voor een goede stevigheid zorgen.</p>
+        </div>
             </button>
         </model-viewer>
         
@@ -375,50 +373,7 @@
         </section>
 
         </div>
-        <!-- Deze gegevens hieronder uit gekregen info gehaald en vertaald. Sommige woorden met google translate vertaald. -->
-        <!-- https://translate.google.com/?hl=nl&sl=nl&tl=it&op=translate -->
-        <dialog popover="manual" id="popover-xray">
-            <h2>X-ray instrument</h2>
-            <img src="images/sron-images/images/satellite/xplorer-instrument.png" alt="xplorer instrument">
-            <p>Het röntgeninstrument is de payload van deze missie. Waarmee we standaard siliciumdriftdetectoren (SDD's) gebruiken, die elk de fotonen van één concentrator opvangen.</p>
-        </dialog>
 
-        <dialog popover="manual" id="popover-startracker">
-            <h2>Star Trackers</h2>
-            <p>De star trackers worden aan de buitenkant gemonteerd vanwege hun grote diameter van de schotten. </p>
-        </dialog>
-
-        <!-- houden -->
-        <dialog popover="manual" id="popover-reactionwheels">
-            <h2>Reaction wheels</h2>
-            <p>De reactiewielen zijn zo dicht mogelijk bij het zwaartepunt geplaatst om de manoeuvreerbaarheid te verbeteren.</p>
-        </dialog>
-
-        <dialog popover="manual" id="popover-antennas">
-            <h2>S-band antennas</h2>
-            <p>Voor de antennes zijn er twee typen: de hoogrendementszendantenne en de omindirectionele ontvangsantenne. </p>
-        </dialog>
-
-        <dialog popover="manual" id="popover-sunsensor">
-            <h2>Sun sensors</h2>
-            <p>Tijdens een safe mode is een nauwkeurige positionering niet vereist, maar de oriëntatie ten opzichte van de zon moet wel bekend en constant gehouden worden.</p>
-        </dialog>
-
-        <!-- houden -->
-        <dialog popover="manual" id="popover-gnssreceiver">
-            <h2>GNSS Receiver</h2>
-            <p>Wat de timing betreft, kan hieraan voldaan worden door de absolute tijd te gebruiken die uit het GNSS-signaal wordt afgeleid.</p>
-        </dialog>
-
-        <dialog popover="manual" id="popover-solarpanels">
-            <h2>Solar panels with drive mechanism</h2>
-            <p>Deze zetten zonlicht om in elecktriciteit</p>
-        </dialog>
-
-        <dialog popover="manual" id="popover-seperationplate">
-            <h2>Seperation plate</h2>
-            <p>De hoofdstuctuur bestaat uit 6 aluminium platen, deze zijn voorzien van driehoekvormige uitsparingen die voor een goede stevigheid zorgen.</p>
-        </dialog>
     </main>
 
     <footer>
