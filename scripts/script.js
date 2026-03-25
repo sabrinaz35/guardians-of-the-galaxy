@@ -83,13 +83,6 @@ let text = '';
 document.addEventListener('DOMContentLoaded', () => {
     const output = document.getElementById('output');
 
-    // Na 5s de pagina “sluiten” (redirect naar about:blank)
-    setTimeout(() => {
-        window.location.href = 'about:blank';
-    }, 5000);
-});
-
-
     if (!output) return;
 
     document.addEventListener('keydown', (e) => {
@@ -108,24 +101,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
-
-
-
-const raketLink = document.querySelector('.raket-link');
-
-if (raketLink) {
-    raketLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        this.classList.add('lanceren');
-        setTimeout(() => {
-            window.scrollTo({
-                top:0,
-                behavior:"smooth"
-            });
-        }, 590);
-        this.addEventListener('animationend', () => {
-            this.classList.remove('lanceren');
-        }, {once:true});
-    })
-}
