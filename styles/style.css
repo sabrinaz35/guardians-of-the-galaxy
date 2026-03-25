@@ -64,8 +64,15 @@ body {
 
     }
 
-    header img{
-        margin: 1rem;
+    header {
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        align-items: start;
+        justify-content: space-between;
+        img{
+            margin: 1rem;
+        }
     }
 }
 
@@ -443,6 +450,32 @@ section {
 }
 
 
+/* Als mensen geen mooie cursor  willen */
+html:has(input[type="checkbox"]:not(:checked)) body {
+    cursor: url('../images/ufo-blanco.png'), auto;
+}
+
+html:has(input[type="checkbox"]:checked) body {
+    cursor: default;
+
+    &::scroll-button(*), .foto-van-satellite  {
+        cursor: pointer;
+    }
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    position: relative;
+    content: url(../images/ufo-blanco.png);
+    transform: scale(0.75);
+    background-color: var(--card-background);
+
+    
+    &:checked {
+        /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/filter-function/grayscale */
+        filter: grayscale(1);
+    }
+}
 
 
 @layer black-hole {
