@@ -106,9 +106,30 @@ document.addEventListener('DOMContentLoaded', () => {
             sanne.forEach(el => {
                 el.style.opacity = '0.1'; // laag zichtbaar
             });
-        } else {
+        }
+        else if (text.endsWith('VASILIS')) {
+            const vasilis = document.querySelectorAll('.vasilis');
+            vasilis.forEach(el => {
+                el.style.opacity = '0.1'; // laag zichtbaar
+            });
+        }
+        else if (text.endsWith('CYD')) {
+            const cyd = document.querySelectorAll('.cyd');
+            cyd.forEach(el => {
+                el.style.opacity = '0.1'; // laag zichtbaar
+            });
+        }
+        else {
             const sanne = document.querySelectorAll('.sanne');
             sanne.forEach(el => {
+                el.style.opacity = '0';
+            });
+            const vasilis = document.querySelectorAll('.vasilis');
+            vasilis.forEach(el => {
+                el.style.opacity = '0';
+            });
+            const cyd = document.querySelectorAll('.cyd');
+            cyd.forEach(el => {
                 el.style.opacity = '0';
             });
         }

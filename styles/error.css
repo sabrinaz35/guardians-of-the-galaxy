@@ -77,5 +77,27 @@ body {
         transition: opacity 1s ease;
     }
 
+    .vasilis {
+        position:absolute;
+        pointer-events: none;
+        opacity:0;
+        left:10%;
+        top:15%;
+        width:20%;
+        height:auto;
+        transition: opacity 1s ease;
+    }
+
+    .cyd {
+        position:absolute;
+        pointer-events: none;
+        opacity:0;
+        left:10%;
+        top:15%;
+        width:20%;
+        height:auto;
+        transition: opacity 1s ease;
+    }
+
 
 }
