@@ -64,8 +64,15 @@ body {
 
     }
 
-    header img{
-        margin: 1rem;
+    header {
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        align-items: start;
+        justify-content: space-between;
+        img{
+            margin: 1rem;
+        }
     }
 }
 
@@ -90,13 +97,14 @@ ul {
 
 ul li {
   text-indent: -1em;  
-  padding-left: 1em;  
+  padding-left: 1em; 
+  font-family: rajdhani; 
 }
 
 main {
     width: 100%;
     position: relative;
-    padding-top: 100vh;
+    /* padding-top: 100vh; */
 }
 
 section {
@@ -113,6 +121,7 @@ section {
 
 
 /* MARK: Section foto's */
+/* https://scroll-driven-animations.style/demos/horizontal-section/css/ */
 .section-images{
     display: flex;
     align-items: center;
@@ -255,9 +264,13 @@ section {
 #cards {
     --numcards: 3;
     width: 80%;
-    margin: 0 auto;
+    @media (max-width:400px) {
+            width:90%;
+        }
+    margin: 5em auto 15em auto;
     padding: 2em 0;
     view-timeline-name: --cards-element-scrolls-in-body;
+    transition: width 1s ease;
 
 
     .card {
@@ -269,13 +282,20 @@ section {
         box-shadow: var(--card-glow); 
         border: 1px solid var(--card-border);
         backdrop-filter: blur(5px);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, top 0.3s ease;
         transform-origin: top; /* scale vanaf bovenkant */
 
+        --card-offset:20vh;
+        @media (max-width:500px) {
+            --card-offset:10vh;
+        }
+        @media (max-width:400px) {
+            --card-offset:5vh;
+        }
         --index0: calc(var(--index) - 1);
         --reverse-index0: calc(var(--numcards) - var(--index0));
         z-index: calc(var(--index0));
-        top: calc(20vh + var(--index0) * 2em);
+        top: calc(var(--card-offset) + var(--index0) * 2em);
 
         /* Animatie over scroll */
         animation: scale linear forwards;
@@ -399,15 +419,18 @@ section {
   }
 }
 
+.position-satellite {
+    position: relative;
+}
 
 .div-van-satellite {
-    position: absolute;
+    /* Static positie ervan op telefoon */
+    position:static;
     top: 1vh;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    
 
     .foto-van-satellite {
 
@@ -418,14 +441,269 @@ section {
         height: 50vmin;
         z-index: 99999;
 
-        &:hover {
-            --scale: 1.5;
-            animation-play-state: paused;
-        }
-
         path:hover {
             filter: brightness(1.4);
         }
     }
 
+}
+
+/* scoll animation bij groter scherm */
+@media (width>1000px) {
+        .div-van-satellite {
+            position: sticky;
+            top: .5vh;
+            z-index: 3;
+
+            /* https://css-tricks.com/scroll-driven-sticky-heading/ */
+            animation: move-sattelite linear;
+            animation-timeline: view();
+            animation-range: cover 0% cover 100%;
+        } 
+
+    @media (prefers-reduced-motion: reduce) {
+        .div-van-satellite {
+            left: -40vw;
+
+            transform: none;
+            animation: none;
+        }  
+    }
+
+    @keyframes move-sattelite {
+        from {
+            transform: translateX(0) scale(1);
+        } to {
+            transform: translateX(-50vw) scale(.5);
+        }
+    }
+}
+
+
+
+
+/* 3d nebula gedeelte */
+model-viewer {
+    width: 100%;
+    height: 400px;
+    background-color: transparent;
+}
+
+.hotspot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid #0061ED;
+    cursor: pointer;
+    position: relative;
+    animation: pulse-popover 2s ease-in-out infinite;
+}
+
+.hotspot-popover {
+    display: none;
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(25, 25, 40, 0.95);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 12px 16px;
+    width: 180px;
+    text-align: left;
+    pointer-events: none;
+
+    h3 {
+        font-family: orbitron;
+        font-size: 12px;
+        color: #43a9be;
+        margin-bottom: 6px;
+    }
+
+    p {
+        font-size: 13px;
+        margin: 0;
+    }
+}
+
+.hotspot.active .hotspot-popover {
+    display: block;
+}
+
+@keyframes pulse-popover {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(0, 97, 237, 0.3); }
+    50%       { box-shadow: 0 0 0 8px rgba(0, 97, 237, 0.1); }
+}
+
+
+
+
+
+
+/* Als mensen geen mooie cursor  willen */
+html:has(input[type="checkbox"]:not(:checked)) body {
+    cursor: url('../images/ufo-blanco.png'), auto;
+}
+
+html:has(input[type="checkbox"]:checked) body {
+    cursor: default;
+
+    &::scroll-button(*), .foto-van-satellite  {
+        cursor: pointer;
+    }
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    position: relative;
+    content: url(../images/ufo-blanco.png);
+    transform: scale(0.75);
+    background-color: var(--card-background);
+
+    
+    &:checked {
+        /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/filter-function/grayscale */
+        filter: grayscale(1);
+    }
+}
+
+
+
+
+
+
+
+@layer black-hole {
+    /* Bron: https://codepen.io/waveciou/pen/ZZydGx */
+
+    html {
+        --color-orange-1: #f50;
+        --color-orange-2: #f80;
+        --color-orange-3: #f60;
+        --color-yellow: #ffeb3b;
+        --color-black: #000;
+        --color-white: #fff;
+
+        --time: 15s;
+    }
+
+    body {
+        position: relative;
+    }
+
+    /* Black hole styling en hover */
+    .black-hole {
+        z-index: 9999;
+        width: 5em;
+        height: 5em;
+        position: absolute;
+        top: 10vh;
+        right: 20%;
+        transform: scale(1);
+        transition: transform 0.3s ease;
+    }
+
+    .black-hole::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 100%;
+        background-color: var(--color-black);
+        box-shadow: 
+            0vw 0vw 7vw var(--color-orange-1),
+            0vw 0vw 5vw var(--color-yellow),
+            -4vw -1vw 30vw var(--color-orange-3);
+        animation: rotate 3s linear infinite;
+        transition: box-shadow 0.3s ease;
+    }
+
+    /* Hover effect */
+    .black-hole:hover {
+        transform: scale(1.2);
+    }
+
+    .black-hole:hover::before {
+        box-shadow: 
+            0vw 0vw 12vw var(--color-orange-1),
+            0vw 0vw 10vw var(--color-yellow),
+            -6vw -2vw 40vw var(--color-orange-3);
+    }
+
+    /* Click pulse animatie */
+    @keyframes pulse-black-hole {
+        0%   { transform: scale(1); }
+        3%  { transform: scale(1.4); }
+        6%  { transform: scale(0.9); }
+        10% { transform: scale(1.2); }
+        100% { transform: scale(16); }
+    }
+
+    .black-hole.clicked {
+        animation: pulse-black-hole 6s ease-out forwards;
+    }
+
+    /* Rotatie animatie */
+    @keyframes rotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(-360deg); }
+    }
+
+    /* Opslokken van de pagina (transition vertraagd) */
+    body.sucked > *:not(.black-hole) {
+        transition: transform 5s ease-in, opacity 5s ease-in;
+    }
+}
+
+
+
+
+
+footer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0 10rem 0;
+}
+ 
+.raket-link {
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+    z-index: 101;
+}
+ 
+.raket-link:hover {
+    transform: translateY(-10px);
+}
+ 
+.raket-image {
+    
+    width: 220px;  
+    height: auto;
+    z-index: 200;
+}
+ 
+.raket-link.lanceren {
+    animation: raket-lancering 1.5s ease-in forwards;
+    pointer-events: none;
+}
+ 
+@keyframes raket-lancering {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    30% {
+        transform: translateY(10px) scale(1);
+    }
+    100% {
+        transform: translateY(-600vh) scale(0.5);
+        opacity: 1;
+    }
 }
