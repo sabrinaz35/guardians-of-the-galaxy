@@ -497,7 +497,7 @@ model-viewer {
     border: 2px solid #0061ED;
     cursor: pointer;
     position: relative;
-    animation: pulse 2s ease-in-out infinite;
+    animation: pulse-popover 2s ease-in-out infinite;
 }
 
 .hotspot-popover {
@@ -531,7 +531,7 @@ model-viewer {
     display: block;
 }
 
-@keyframes pulse {
+@keyframes pulse-popover {
     0%, 100% { box-shadow: 0 0 0 4px rgba(0, 97, 237, 0.3); }
     50%       { box-shadow: 0 0 0 8px rgba(0, 97, 237, 0.1); }
 }
@@ -635,7 +635,7 @@ input[type="checkbox"] {
     }
 
     /* Click pulse animatie */
-    @keyframes pulse {
+    @keyframes pulse-black-hole {
         0%   { transform: scale(1); }
         3%  { transform: scale(1.4); }
         6%  { transform: scale(0.9); }
@@ -644,7 +644,7 @@ input[type="checkbox"] {
     }
 
     .black-hole.clicked {
-        animation: pulse 6s ease-out forwards;
+        animation: pulse-black-hole 6s ease-out forwards;
     }
 
     /* Rotatie animatie */
