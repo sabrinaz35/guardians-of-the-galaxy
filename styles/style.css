@@ -121,6 +121,7 @@ section {
 
 
 /* MARK: Section foto's */
+/* https://scroll-driven-animations.style/demos/horizontal-section/css/ */
 .section-images{
     display: flex;
     align-items: center;
@@ -454,6 +455,7 @@ section {
             top: .5vh;
             z-index: 3;
 
+            /* https://css-tricks.com/scroll-driven-sticky-heading/ */
             animation: move-sattelite linear;
             animation-timeline: view();
             animation-range: cover 0% cover 100%;

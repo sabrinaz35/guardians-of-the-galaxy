@@ -54,3 +54,29 @@ En we hebben de verschillende sections ook vormgegeven. Deze werkt als scrollbas
 Als laatste hebben we ook een custom cursor gemaakt, van een ruimteschip, daarbij hebben we ook rekening gehouden met als mensen dat niet willen dat ze dit uit kunnen zetten door rechtsbovenin het scherm te klikken. Daarnaast heeft het dezelfde vormgeving als de cursor zodat het wat duidelijker is
 
 <img src="images/readme-images/24-03-eindstand-dag4.png" alt="uitgewerkte progress dag 2 foto 4">
+
+
+## 🗓️ Maandag 24 maart 
+Vandaag de laatste puntjes op de i gezet. 
+
+
+
+## 🗓️ Bronnen
+Uiteraard de gegeven informatie van de Nebula Xplorer in het teamskanaal.
+
+### html bronnen
+
+### css bronnen
+- https://fonts.google.com/specimen/Orbitron?preview.script=Latn 
+- https://fonts.google.com/specimen/Rajdhani?preview.script=Latn 
+- https://scroll-driven-animations.style/demos/horizontal-section/css/
+- https://css-tricks.com/scroll-driven-sticky-heading/ 
+- https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Masking 
+- https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-button 
+- https://scroll-driven-animations.style/demos/stacking-cards/css/ 
+- https://css-tricks.com/scroll-driven-sticky-heading/  
+- https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/filter-function/grayscale 
+- https://codepen.io/waveciou/pen/ZZydGx
+
+
+### javascript bronnen 
