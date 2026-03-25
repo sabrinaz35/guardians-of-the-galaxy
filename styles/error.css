@@ -32,6 +32,7 @@ body {
     width: 100%;
     color: var(--color-text);
     position:relative;
+    overflow:clip;
 
     #output {
         display:flex;
@@ -47,6 +48,17 @@ body {
         @media (max-width:500px) {
             font-size:3em;
         }
+    }
+
+    .raket {
+        position:absolute;
+        pointer-events: none;
+        left:-30%;
+        top:5%;
+        width:10%;
+        height:auto;
+        transition: left 5s linear;
+        rotate: 90deg;
     }
 
     #hint {
@@ -77,5 +89,37 @@ body {
         transition: opacity 1s ease;
     }
 
+    .vasilis {
+        position:absolute;
+        pointer-events: none;
+        opacity:0;
+        left:10%;
+        top:15%;
+        width:20%;
+        height:auto;
+        transition: opacity 1s ease;
+    }
 
+    .cyd {
+        position:absolute;
+        pointer-events: none;
+        opacity:0;
+        left:10%;
+        top:15%;
+        width:20%;
+        height:auto;
+        transition: opacity 1s ease;
+    }
+
+    .madeby {
+        position:absolute;
+        pointer-events: none;
+        opacity:0;
+        left:10%;
+        top:15%;
+        width:25%;
+        height:auto;
+        transition: opacity 1s ease;
+    }  
 }
+

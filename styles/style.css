@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -96,8 +100,7 @@ ul {
 }
 
 ul li {
-  text-indent: -1em;  
-  padding-left: 1em; 
+  list-style-type:none;
   font-family: rajdhani; 
 }
 
@@ -267,7 +270,7 @@ section {
     @media (max-width:400px) {
             width:90%;
         }
-    margin: 5em auto 15em auto;
+    margin: 0 auto;
     padding: 2em 0;
     view-timeline-name: --cards-element-scrolls-in-body;
     transition: width 1s ease;
@@ -487,6 +490,8 @@ model-viewer {
     width: 100%;
     height: 400px;
     background-color: transparent;
+    padding-bottom: 20vh;
+    z-index: 9999;
 }
 
 .hotspot {
@@ -498,13 +503,24 @@ model-viewer {
     cursor: pointer;
     position: relative;
     animation: pulse-popover 2s ease-in-out infinite;
+
+    .too-long {
+    width: 400px;
+
+    @media (width < 320px) {
+        width: 60vw;
+
+        img {
+            display: none;
+        }
+    }
+
+    }
 }
 
 .hotspot-popover {
     display: none;
     position: absolute;
-    bottom: 24px;
-    left: 50%;
     transform: translateX(-50%);
     background: rgba(25, 25, 40, 0.95);
     border: 1px solid rgba(0, 255, 255, 0.3);
@@ -512,28 +528,45 @@ model-viewer {
     padding: 12px 16px;
     width: 180px;
     text-align: left;
-    pointer-events: none;
 
     h3 {
         font-family: orbitron;
         font-size: 12px;
-        color: #43a9be;
+        color: var(--color-accent-1);
         margin-bottom: 6px;
     }
 
     p {
         font-size: 13px;
         margin: 0;
+        color: var(--color-text-main);
+    }
+
+    img {
+        width: 10vw;
+        height: 10vh;
     }
 }
+
+.to-top {
+        bottom: 10px;
+        width: 300px;
+        
+        @media (width > 320px) {
+            width: 60vw;
+        }
+    }
 
 .hotspot.active .hotspot-popover {
     display: block;
 }
 
 @keyframes pulse-popover {
-    0%, 100% { box-shadow: 0 0 0 4px rgba(0, 97, 237, 0.3); }
-    50%       { box-shadow: 0 0 0 8px rgba(0, 97, 237, 0.1); }
+    0%, 100% { box-shadow: 0 0 0 4px rgba(0, 97, 237, 0.3); 
+    }
+
+    50% { box-shadow: 0 0 0 8px rgba(0, 97, 237, 0.1); 
+    }
 }
 
 
@@ -594,7 +627,7 @@ input[type="checkbox"] {
 
     /* Black hole styling en hover */
     .black-hole {
-        z-index: 9999;
+        z-index: 99999999;
         width: 5em;
         height: 5em;
         position: absolute;
@@ -663,37 +696,39 @@ input[type="checkbox"] {
 
 
 
+
+
 footer {
     position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 4rem 0 10rem 0;
+    padding: 4rem 0 10rem 0; 
 }
- 
+
 .raket-link {
     display: inline-block;
     transition: transform 0.2s ease-in-out;
     z-index: 101;
 }
- 
+
 .raket-link:hover {
     transform: translateY(-10px);
 }
- 
+
 .raket-image {
     
     width: 220px;  
-    height: auto;
+    height: auto; 
     z-index: 200;
 }
- 
+
 .raket-link.lanceren {
     animation: raket-lancering 1.5s ease-in forwards;
     pointer-events: none;
 }
- 
+
 @keyframes raket-lancering {
     0% {
         transform: translateY(0) scale(1);

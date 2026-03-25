@@ -14,6 +14,7 @@ window.addEventListener('scroll', () => {
     aarde.style.opacity = nieuweOpacity
 })
 
+// deze code gegenereerd om de data positions te vinden van de 3d element met prompt; "hoe kan ik punten van mijn 3d element vinden om te gebruiken voor popovers etc"
 // const viewer = document.getElementById('satellite-viewer');
 
 // viewer.addEventListener('load', () => {
@@ -106,10 +107,47 @@ document.addEventListener('DOMContentLoaded', () => {
             sanne.forEach(el => {
                 el.style.opacity = '0.1'; // laag zichtbaar
             });
-        } else {
+        }
+        else if (text.endsWith('VASILIS')) {
+            const vasilis = document.querySelectorAll('.vasilis');
+            vasilis.forEach(el => {
+                el.style.opacity = '0.1'; // laag zichtbaar
+            });
+        }
+        else if (text.endsWith('CYD')) {
+            const cyd = document.querySelectorAll('.cyd');
+            cyd.forEach(el => {
+                el.style.opacity = '0.1'; // laag zichtbaar
+            });
+        } else if (text.endsWith('MADEBY')|| text.endsWith('MADE BY')|| text.endsWith('GEMAAKT DOOR')
+            || text.endsWith('GEMAAKTDOOR')|| text.endsWith('ALIEN')) {
+            const madeby = document.querySelectorAll('.madeby');
+            madeby.forEach(el => {
+                el.style.opacity = '0.2'; // laag zichtbaar
+            });
+        } else if (text.endsWith('RAKET')|| text.endsWith('ROCKET')) {
+            const raket = document.querySelectorAll('.raket');
+            
+            raket.forEach(el => {
+                el.style.left = '110%';
+            });
+        }
+        else {
             const sanne = document.querySelectorAll('.sanne');
             sanne.forEach(el => {
                 el.style.opacity = '0';
+            });
+            const vasilis = document.querySelectorAll('.vasilis');
+            vasilis.forEach(el => {
+                el.style.opacity = '0';
+            });
+            const cyd = document.querySelectorAll('.cyd');
+            cyd.forEach(el => {
+                el.style.opacity = '0';
+            });
+            const madeby = document.querySelectorAll('.madeby');
+            madeby.forEach(el => {
+                el.style.opacity = '0'; // laag zichtbaar
             });
         }
     });
@@ -119,10 +157,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 const raketLink = document.querySelector('.raket-link');
+const raketGeluid = document.querySelector('#raket-audio');
 
 if (raketLink) {
     raketLink.addEventListener('click', function(e) {
+
         e.preventDefault();
+
+        if (raketGeluid) {
+            raketGeluid.currentTime = 0;
+            raketGeluid.play();
+        }
+
         this.classList.add('lanceren');
         setTimeout(() => {
             window.scrollTo({
