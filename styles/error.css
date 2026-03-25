@@ -65,4 +65,17 @@ body {
             font-size:2em;
         }
     }
+
+    .sanne {
+        position:absolute;
+        pointer-events: none;
+        opacity:0;
+        right:15%;
+        top:15%;
+        width:20%;
+        height:auto;
+        transition: opacity 1s ease;
+    }
+
+
 }

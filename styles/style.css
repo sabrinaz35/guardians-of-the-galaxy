@@ -266,7 +266,7 @@ section {
     @media (max-width:400px) {
             width:90%;
         }
-    margin: 0 auto;
+    margin: 5em auto 15em auto;
     padding: 2em 0;
     view-timeline-name: --cards-element-scrolls-in-body;
     transition: width 1s ease;

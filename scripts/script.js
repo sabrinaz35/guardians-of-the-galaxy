@@ -95,9 +95,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         output.textContent = text;
 
-        // Check of de gebruiker "RESTART" heeft getypt
-        if (text.endsWith('RESTART')) {
+        if (text.endsWith('RESTART') || text.endsWith('HERSTART')) {
             window.location.href = 'index.html';
+        }
+        if (text.endsWith('CLOSE') || text.endsWith('SLUIT'))  {
+            window.location.href = 'about:blank'; // simuleert een gesloten pagina
+        }
+        if (text.endsWith('SANNE')) {
+            const sanne = document.querySelectorAll('.sanne');
+            sanne.forEach(el => {
+                el.style.opacity = '0.1'; // laag zichtbaar
+            });
+        } else {
+            const sanne = document.querySelectorAll('.sanne');
+            sanne.forEach(el => {
+                el.style.opacity = '0';
+            });
         }
     });
 });
