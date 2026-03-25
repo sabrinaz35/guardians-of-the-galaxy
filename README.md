@@ -39,3 +39,45 @@ Uiteindelijk hebben we het volgende voor elkaar weten te krijgen.
 We hebben een eerste opzet gemaakt via Figma om iedereen een duidelijk beeld te geven.
 
 <img src="images/readme-images/23-03-idee1-figma.png" alt="Schetsen van eerste idee uitgewerkt in figma">
+
+We hebben er uiteindelijk toch voor gerkozen om voor een wat realistischer beeld te gaan voor zowel de sataliet als de wereldbol.
+
+<img src="images/readme-images/24-03-eindstand-dag.png" alt="uitgewerkte progress dag 2 foto 1">
+
+We hebben ook zoals je ziet wat elementen toegevoegd als easter eggs, dit moet je zelf maar uitproberen om te kijken wat het het doet. Ook hebben we een passende font uitgekozen met daarbij wel de kleuren van de huidige Nebula Xplorer site meegenomen.
+
+<img src="images/readme-images/24-03-eindstand-dag2.png" alt="uitgewerkte progress dag 2 foto 2">
+
+En we hebben de verschillende sections ook vormgegeven. Deze werkt als scrollbased animation.
+<img src="images/readme-images/24-03-eindstand-dag3.png" alt="uitgewerkte progress dag 2 foto 3">
+
+Als laatste hebben we ook een custom cursor gemaakt, van een ruimteschip, daarbij hebben we ook rekening gehouden met als mensen dat niet willen dat ze dit uit kunnen zetten door rechtsbovenin het scherm te klikken. Daarnaast heeft het dezelfde vormgeving als de cursor zodat het wat duidelijker is
+
+<img src="images/readme-images/24-03-eindstand-dag4.png" alt="uitgewerkte progress dag 2 foto 4">
+
+
+## 🗓️ Maandag 24 maart 
+Vandaag de laatste puntjes op de i zetten en easter eggs toevoegen. 
+
+
+
+## 🗓️ Bronnen
+Uiteraard de gegeven informatie van de Nebula Xplorer in het teamskanaal.
+
+### html bronnen
+- https://translate.google.com/?hl=nl&sl=nl&tl=it&op=translate
+
+### css bronnen
+- https://fonts.google.com/specimen/Orbitron?preview.script=Latn 
+- https://fonts.google.com/specimen/Rajdhani?preview.script=Latn 
+- https://scroll-driven-animations.style/demos/horizontal-section/css/
+- https://css-tricks.com/scroll-driven-sticky-heading/ 
+- https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Masking 
+- https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-button 
+- https://scroll-driven-animations.style/demos/stacking-cards/css/ 
+- https://css-tricks.com/scroll-driven-sticky-heading/  
+- https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/filter-function/grayscale 
+- https://codepen.io/waveciou/pen/ZZydGx
+
+
+### javascript bronnen 
