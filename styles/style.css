@@ -121,6 +121,7 @@ section {
 
 
 /* MARK: Section foto's */
+/* https://scroll-driven-animations.style/demos/horizontal-section/css/ */
 .section-images{
     display: flex;
     align-items: center;
@@ -418,15 +419,18 @@ section {
   }
 }
 
+.position-satellite {
+    position: relative;
+}
 
 .div-van-satellite {
-    position: absolute;
+    /* Static positie ervan op telefoon */
+    position:static;
     top: 1vh;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    
 
     .foto-van-satellite {
 
@@ -437,11 +441,6 @@ section {
         height: 50vmin;
         z-index: 99999;
 
-        &:hover {
-            --scale: 1.5;
-            animation-play-state: paused;
-        }
-
         path:hover {
             filter: brightness(1.4);
         }
@@ -449,8 +448,41 @@ section {
 
 }
 
-/* 3d nebula gedeelte */
+/* scoll animation bij groter scherm */
+@media (width>1000px) {
+        .div-van-satellite {
+            position: sticky;
+            top: .5vh;
+            z-index: 3;
 
+            /* https://css-tricks.com/scroll-driven-sticky-heading/ */
+            animation: move-sattelite linear;
+            animation-timeline: view();
+            animation-range: cover 0% cover 100%;
+        } 
+
+    @media (prefers-reduced-motion: reduce) {
+        .div-van-satellite {
+            left: -40vw;
+
+            transform: none;
+            animation: none;
+        }  
+    }
+
+    @keyframes move-sattelite {
+        from {
+            transform: translateX(0) scale(1);
+        } to {
+            transform: translateX(-50vw) scale(.5);
+        }
+    }
+}
+
+
+
+
+/* 3d nebula gedeelte */
 model-viewer {
     width: 100%;
     height: 400px;
