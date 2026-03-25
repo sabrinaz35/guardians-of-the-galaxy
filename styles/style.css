@@ -533,7 +533,7 @@ model-viewer {
     h3 {
         font-family: orbitron;
         font-size: 12px;
-        color: #43a9be;
+        color: var(--color-accent-1);
         margin-bottom: 6px;
     }
 
@@ -628,7 +628,7 @@ input[type="checkbox"] {
 
     /* Black hole styling en hover */
     .black-hole {
-        z-index: 9999;
+        z-index: 99999999;
         width: 5em;
         height: 5em;
         position: absolute;
