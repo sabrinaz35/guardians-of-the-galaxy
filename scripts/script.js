@@ -141,10 +141,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 const raketLink = document.querySelector('.raket-link');
+const raketGeluid = document.querySelector('#raket-audio');
 
 if (raketLink) {
     raketLink.addEventListener('click', function(e) {
+
         e.preventDefault();
+
+        if (raketGeluid) {
+            raketGeluid.currentTime = 0;
+            raketGeluid.play();
+        }
+
         this.classList.add('lanceren');
         setTimeout(() => {
             window.scrollTo({
