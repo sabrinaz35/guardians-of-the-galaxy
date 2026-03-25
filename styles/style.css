@@ -658,3 +658,52 @@ input[type="checkbox"] {
         transition: transform 5s ease-in, opacity 5s ease-in;
     }
 }
+
+
+
+
+
+footer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0 10rem 0;
+}
+ 
+.raket-link {
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+    z-index: 101;
+}
+ 
+.raket-link:hover {
+    transform: translateY(-10px);
+}
+ 
+.raket-image {
+    
+    width: 220px;  
+    height: auto;
+    z-index: 200;
+}
+ 
+.raket-link.lanceren {
+    animation: raket-lancering 1.5s ease-in forwards;
+    pointer-events: none;
+}
+ 
+@keyframes raket-lancering {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    30% {
+        transform: translateY(10px) scale(1);
+    }
+    100% {
+        transform: translateY(-600vh) scale(0.5);
+        opacity: 1;
+    }
+}
