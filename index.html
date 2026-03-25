@@ -13,9 +13,9 @@
 <body>
     <header>
         <img class="logo" src="images/SRON_Full_White.webp" alt="Logo van SRON">
-
+        <input type="checkbox">
     </header>
-
+    <div class="black-hole"></div> 
     <main>
         <img class="earth-image" src="images/aardbol-groot.png" alt="SVG plaatje van de aarde">
       
@@ -39,7 +39,10 @@
 
         </model-viewer>
         
-        <!-- <div class="div-van-satellite"> 
+
+        
+        <!-- 
+        <div class="div-van-satellite">
             <!-- foto gemaakt met ai, en zelf aangepast, prompt: "maak van de satellite een svg die ik kan downloaden", ik heb dit daarna in figma aangepast naar mijn eigen stijl
             <svg class="foto-van-satellite" xmlns="http://www.w3.org/2000/svg" width="680" height="520" viewBox="0 0 680 520" fill="none">
                 <g clip-path="url(#clip0_19_270)">
@@ -316,6 +319,54 @@
                 </div>
             </div>
         </section>
+
+        <dialog popover="manual" id="popover-xray">
+            <h2>X-ray instrument</h2>
+            <img src="images/sron-images/images/satellite/xplorer-instrument.png" alt="xplorer instrument">
+
+            <p>
+                The X-ray instrument is the payload of this mission, which will be based on double reflecting Wolter type 1 mirror modules or concentrators, as depicted in Figure 1, leading to a focal length of 85cm. We will use off-the-shelf Silicon Drift Detectors (SDD) each capturing the photons of one concentrator. 
+                We will add dedicated SDDs for in-flight calibration and system verification.
+                The signal captured by the SDDs will be processed by hot redundant instrument readout units (IRU). Dedicated digital signal processing will occur in the space graded IRUs, to record the observed energy including precise timing information.
+            </p>
+        </dialog>
+
+        <dialog popover="manual" id="popover-startracker">
+            <h2>Star Trackers</h2>
+            <p>De star trackers (ST's) worden extern gemonteerd vanwege hun grote diameter van de schotten. Uitsparingen in de dunne buitenbekleding zouden leiden tot hoge lokale spanningsconcentraties en de minimale afstand tussen de inzetstukken schenden. Er zijn twee ST's gemonteerd: één uitgelijnd met de kijkrichting van het wetenschappelijke instrument, de andere onder een hoek van 30°, waardoor continue hemelzichtbaarheid en houdingsbevestiging mogelijk is.</p>
+        </dialog>
+
+        <!-- houden -->
+        <dialog popover="manual" id="popover-reactionwheels">
+            <h2>Reaction wheels</h2>
+            <p>De reactiewielen zijn zo dicht mogelijk bij het zwaartepunt geplaatst om de manoeuvreerbaarheid te verbeteren.</p>
+        </dialog>
+
+        <dialog popover="manual" id="popover-antennas">
+            <h2>S-band antennas</h2>
+            <p>Voor de antennes zijn er twee typen: de hoogrendementszendantenne en de omnidirectionele ontvangstantenne. De gekozen hoogrendementsantenne is de iQspacecom S-band quad patch, met een versterking tot 11,5 dB. Deze heeft een kleinere halfbundelbreedte, maar levert een uitstekende versterking. Bovendien heeft hij een TRL 9-classificatie, is hij klein en licht. De omnidirectionele antenne is voorlopig die van iSISPACE. Deze levert tot 6,5 dB met een veel grotere halfbundelbreedte van 100 graden en heeft zijn sporen in de ruimtevaart verdiend.</p>
+        </dialog>
+
+        <dialog popover="manual" id="popover-sunsensor">
+            <h2>Sun sensors</h2>
+            <p>Tijdens de veilige modus is nauwkeurige positionering niet vereist, maar de oriëntatie ten opzichte van de zon moet wel bekend en constant gehouden worden. Hiervoor worden grove zonnesensoren gebruikt. Vier van deze sensoren zijn rondom het ruimtevaartuig gemonteerd om vrijwel de gehele hemel te bestrijken.</p>
+        </dialog>
+
+        <!-- houden -->
+        <dialog popover="manual" id="popover-gnssreceiver">
+            <h2>GNSS Receiver</h2>
+            <p>Wat de timing betreft, kan hieraan voldaan worden door de absolute tijd te gebruiken die uit het GNSS-signaal wordt afgeleid.</p>
+        </dialog>
+
+        <dialog popover="manual" id="popover-solarpanels">
+            <h2>Solar panels with drive mechanism</h2>
+            <p>Deze zetten zonlicht om in elecktriciteit</p>
+        </dialog>
+
+        <dialog popover="manual" id="popover-seperationplate">
+            <h2>Seperation plate</h2>
+            <p>De hoofdstructuur bestaat uit 6 aluminium platen. Deze zijn voorzien van machinaal bewerkte driehoekige uitsparingen om een ​​efficiënte lastoverdracht te vergemakkelijken. Dit vermindert de massa met behoud van de structurele integriteit en biedt gemakkelijke toegang tot de FPA tijdens integratie en uitlijning.</p>
+        </dialog>
     </main>
 
     <footer>
