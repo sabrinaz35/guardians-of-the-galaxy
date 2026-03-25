@@ -67,6 +67,8 @@ Uiteraard de gegeven informatie van de Nebula Xplorer in het teamskanaal.
 ### html bronnen
 - https://www.freepik.com/free-psd/earth-ball-planet-isolated_316503695.htm#fromView=keyword&page=1&position=4&uuid=b5fb5766-aa1e-4f92-aa00-0569b66b4fb0&query=3d+earth+svg 
 - https://translate.google.com/?hl=nl&sl=nl&tl=it&op=translate
+-  [  Gemini ](https://gemini.google.com/app/bb22ad8b4966f885?hl=nl) prompt: Maak een afbeelding in een cartoonish stijl, zonder achtergrond:  van een groep van vier studenten als groene aliens, waarvan de eerste een man is met een zwarte pet met witte letters van de N en Y erop een donkergroene trui van jack en jones bruin haar en blauwe ogen. De tweede jongen die erop moet heeft ook bruin haar met een donkergroene trui met san francisco erop en een klein baardje en groen/blauwe ogen en de derde jongen die erop moet heeft een rood t-shirt aan een goude schakelketting en zwart haar en bruine ogen. De laatste is een meid met een blonde paardenstaart in haar haar, roze trui aan en blauwe ogen. En zijn net klaar met het strijden van een hackaton
+
 
 ### css bronnen
 - https://fonts.google.com/specimen/Orbitron?preview.script=Latn 
