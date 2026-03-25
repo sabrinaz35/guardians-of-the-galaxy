@@ -65,6 +65,7 @@ Vandaag de laatste puntjes op de i zetten en easter eggs toevoegen.
 Uiteraard de gegeven informatie van de Nebula Xplorer in het teamskanaal.
 
 ### html bronnen
+- https://www.freepik.com/free-psd/earth-ball-planet-isolated_316503695.htm#fromView=keyword&page=1&position=4&uuid=b5fb5766-aa1e-4f92-aa00-0569b66b4fb0&query=3d+earth+svg 
 - https://translate.google.com/?hl=nl&sl=nl&tl=it&op=translate
 
 ### css bronnen
