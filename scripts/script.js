@@ -14,6 +14,33 @@ window.addEventListener('scroll', () => {
     aarde.style.opacity = nieuweOpacity
 })
 
+// const viewer = document.getElementById('satellite-viewer');
+
+// viewer.addEventListener('load', () => {
+//     viewer.addEventListener('click', (e) => {
+//         const hit = viewer.positionAndNormalFromPoint(e.clientX, e.clientY);
+//         if (hit) {
+//             console.log(`data-position="${hit.position.x.toFixed(3)} ${hit.position.y.toFixed(3)} ${hit.position.z.toFixed(3)}" data-normal="${hit.normal.x.toFixed(3)} ${hit.normal.y.toFixed(3)} ${hit.normal.z.toFixed(3)}"`);
+//         }
+//     });
+// });
+
+document.querySelectorAll('.hotspot').forEach(hotspot => {
+    hotspot.addEventListener('click', (e) => {
+        e.stopPropagation();
+        document.querySelectorAll('.hotspot').forEach(h => h.classList.remove('active'));
+        hotspot.classList.toggle('active');
+    });
+});
+
+document.addEventListener('click', () => {
+    document.querySelectorAll('.hotspot').forEach(h => h.classList.remove('active'));
+});
+
+
+
+
+
 
 
 const blackHole = document.querySelector('.black-hole');
@@ -51,30 +78,3 @@ if (blackHole) {
     });
 }
 
-// Als blackHole niet bestaat, gebeurt er gewoon niks.
-
-
-
-let text = '';
-
-document.addEventListener('DOMContentLoaded', () => {
-    const output = document.getElementById('output');
-
-    if (!output) return;
-
-    document.addEventListener('keydown', (e) => {
-        // Alleen letters en symbolen verwerken
-        if (e.key.length === 1) {
-            text += e.key.toUpperCase(); // altijd CAPS
-        } else if (e.key === 'Backspace') {
-            text = text.slice(0, -1);
-        }
-
-        output.textContent = text;
-
-        // Check of de gebruiker "RESTART" heeft getypt
-        if (text.endsWith('RESTART')) {
-            window.location.href = 'index.html';
-        }
-    });
-});
