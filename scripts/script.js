@@ -48,3 +48,21 @@ blackHole.addEventListener('click', () => {
         window.location.href = 'about:blank';
     }, 5000);
 });
+
+const raketLink = document.querySelector('.raket-link');
+
+if (raketLink) {
+    raketLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.classList.add('lanceren');
+        setTimeout(() => {
+            window.scrollTo({
+                top:0,
+                behavior:"smooth"
+            });
+        }, 590);
+        this.addEventListener('animationend', () => {
+            this.classList.remove('lanceren');
+        }, {once:true});
+    })
+}
