@@ -78,3 +78,26 @@ if (blackHole) {
     });
 }
 
+let text = '';
+
+document.addEventListener('DOMContentLoaded', () => {
+    const output = document.getElementById('output');
+
+    if (!output) return;
+
+    document.addEventListener('keydown', (e) => {
+        // Alleen letters en symbolen verwerken
+        if (e.key.length === 1) {
+            text += e.key.toUpperCase(); // altijd CAPS
+        } else if (e.key === 'Backspace') {
+            text = text.slice(0, -1);
+        }
+
+        output.textContent = text;
+
+        // Check of de gebruiker "RESTART" heeft getypt
+        if (text.endsWith('RESTART')) {
+            window.location.href = 'index.html';
+        }
+    });
+});
