@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -528,4 +532,28 @@ section {
     body.sucked > *:not(.black-hole) {
         transition: transform 5s ease-in, opacity 5s ease-in;
     }
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0 10rem 0; 
+}
+
+.raket-link {
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+}
+
+.raket-link:hover {
+    transform: translateY(-10px);
+}
+
+.raket-image {
+    
+    width: 120px;  
+    height: auto; 
 }
