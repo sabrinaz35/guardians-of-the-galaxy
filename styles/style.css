@@ -1,7 +1,3 @@
-html {
-    scroll-behavior: smooth;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -271,7 +267,7 @@ section {
     @media (max-width:400px) {
             width:90%;
         }
-    margin: 0 auto;
+    margin: 5em auto 15em auto;
     padding: 2em 0;
     view-timeline-name: --cards-element-scrolls-in-body;
     transition: width 1s ease;
@@ -660,56 +656,5 @@ input[type="checkbox"] {
     /* Opslokken van de pagina (transition vertraagd) */
     body.sucked > *:not(.black-hole) {
         transition: transform 5s ease-in, opacity 5s ease-in;
-    }
-}
-
-
-
-
-
-
-
-footer {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 4rem 0 10rem 0; 
-}
-
-.raket-link {
-    display: inline-block;
-    transition: transform 0.2s ease-in-out;
-    z-index: 101;
-}
-
-.raket-link:hover {
-    transform: translateY(-10px);
-}
-
-.raket-image {
-    
-    width: 220px;  
-    height: auto; 
-    z-index: 200;
-}
-
-.raket-link.lanceren {
-    animation: raket-lancering 1.5s ease-in forwards;
-    pointer-events: none;
-}
-
-@keyframes raket-lancering {
-    0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-    }
-    30% {
-        transform: translateY(10px) scale(1);
-    }
-    100% {
-        transform: translateY(-600vh) scale(0.5);
-        opacity: 1;
     }
 }
