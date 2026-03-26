@@ -467,7 +467,6 @@ section {
     @media (prefers-reduced-motion: reduce) {
         .div-van-satellite {
             position: static;
-            /* left: -40vw; */
 
             transform: none;
             animation: none;
