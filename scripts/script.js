@@ -190,6 +190,13 @@ if (raketLink) {
 
         e.preventDefault();
 
+        const wiltGeenBeweging = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (wiltGeenBeweging) {
+            window.scrollTo(0, 0);
+            
+        } else {
+
         if (raketGeluid) {
             raketGeluid.currentTime = 0;
             raketGeluid.play();
@@ -205,5 +212,6 @@ if (raketLink) {
         this.addEventListener('animationend', () => {
             this.classList.remove('lanceren');
         }, {once:true});
+    }
     })
 }
