@@ -43,13 +43,14 @@ document.addEventListener('click', () => {
 
 
 
-
+const soundEffect = new Audio('audios/soundeffect-blackhole.m4a');
 const blackHole = document.querySelector('.black-hole');
 
 if (blackHole) {
     blackHole.addEventListener('click', () => {
         const bhRect = blackHole.getBoundingClientRect();
         const elements = document.querySelectorAll('body *:not(.black-hole)');
+        soundEffect.play();
 
         // Voeg klasse voor pulse animatie
         blackHole.classList.add('clicked');
