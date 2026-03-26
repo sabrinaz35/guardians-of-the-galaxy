@@ -177,6 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
 const raketLink = document.querySelector('.raket-link');
 const raketGeluid = document.querySelector('#raket-audio');
 
