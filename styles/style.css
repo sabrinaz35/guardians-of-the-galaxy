@@ -434,7 +434,7 @@ section {
     justify-content: center;
     align-items: center;
     width: 100%;
-
+    
     .foto-van-satellite {
 
         animation: float 10s linear infinite;
@@ -466,7 +466,8 @@ section {
 
     @media (prefers-reduced-motion: reduce) {
         .div-van-satellite {
-            left: -40vw;
+            position: static;
+            /* left: -40vw; */
 
             transform: none;
             animation: none;
