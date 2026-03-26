@@ -72,6 +72,11 @@ Uiteraard de gegeven informatie van de Nebula Xplorer in het teamskanaal.
 - https://nl.linkedin.com/in/sannethooft
 - https://gemini.google.com/app?hl=nl
 - https://pixabay.com/nl/sound-effects/film-en-speciale-effecten-rocket-launch-306441/
+- https://www.youtube.com/watch?v=m95JdpLzkQY  
+- https://turboscribe.ai/nl/downloader/youtube/mp4
+
+- bron; https://modelviewer.dev/docs/
+- bron: https://modelviewer.dev/examplesstagingandcameras/index.html
 
 ### css bronnen
 - https://fonts.google.com/specimen/Orbitron?preview.script=Latn 
@@ -87,3 +92,5 @@ Uiteraard de gegeven informatie van de Nebula Xplorer in het teamskanaal.
 
 
 ### javascript bronnen 
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/play 
+- Deze code gegenereerd om de data positions te vinden van de 3d element met prompt; "hoe kan ik punten van mijn 3d element vinden om te gebruiken voor popovers etc"
