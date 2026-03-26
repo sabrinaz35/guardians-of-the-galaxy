@@ -133,6 +133,11 @@ document.addEventListener('DOMContentLoaded', () => {
             madeby.forEach(el => {
                 el.style.opacity = '0.2'; // laag zichtbaar
             });
+        } else if (text.endsWith('GRU')) {
+            const gru = document.querySelector('.gru');
+            gru.style.opacity = '0.2';
+            // https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/play
+            gru.play()
         } else if (text.endsWith('RAKET')|| text.endsWith('ROCKET')) {
             const raket = document.querySelectorAll('.raket');
             
@@ -161,9 +166,14 @@ document.addEventListener('DOMContentLoaded', () => {
             madeby.forEach(el => {
                 el.style.opacity = '0'; // laag zichtbaar
             });
+            const gru = document.querySelectorAll('.gru');
+            gru.forEach(el => {
+                el.style.opacity = '0'; // laag zichtbaar
+            });  
         }
     });
 });
+
 
 
 
