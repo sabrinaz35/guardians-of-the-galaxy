@@ -119,7 +119,14 @@ document.addEventListener('DOMContentLoaded', () => {
             cyd.forEach(el => {
                 el.style.opacity = '0.1'; // laag zichtbaar
             });
-        } else if (text.endsWith('MADEBY')|| text.endsWith('MADE BY')|| text.endsWith('GEMAAKT DOOR')
+        }
+        else if (text.endsWith('JAD')) {
+            const jad = document.querySelectorAll('.jad');
+            jad.forEach(el => {
+                el.style.opacity = '0.1'; // laag zichtbaar
+            });
+        }
+         else if (text.endsWith('MADEBY')|| text.endsWith('MADE BY')|| text.endsWith('GEMAAKT DOOR')
             || text.endsWith('GEMAAKTDOOR')|| text.endsWith('ALIEN')) {
             const madeby = document.querySelectorAll('.madeby');
             madeby.forEach(el => {
@@ -143,6 +150,10 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             const cyd = document.querySelectorAll('.cyd');
             cyd.forEach(el => {
+                el.style.opacity = '0';
+            });
+            const jad = document.querySelectorAll('.jad');
+            jad.forEach(el => {
                 el.style.opacity = '0';
             });
             const madeby = document.querySelectorAll('.madeby');
