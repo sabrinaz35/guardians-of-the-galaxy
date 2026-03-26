@@ -73,6 +73,7 @@ Uiteraard de gegeven informatie van de Nebula Xplorer in het teamskanaal.
 - https://gemini.google.com/app?hl=nl
 - https://pixabay.com/nl/sound-effects/film-en-speciale-effecten-rocket-launch-306441/
 - https://www.youtube.com/watch?v=m95JdpLzkQY  
+- https://turboscribe.ai/nl/downloader/youtube/mp4
 
 ### css bronnen
 - https://fonts.google.com/specimen/Orbitron?preview.script=Latn 
