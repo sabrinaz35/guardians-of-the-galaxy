@@ -434,7 +434,7 @@ section {
     justify-content: center;
     align-items: center;
     width: 100%;
-
+    
     .foto-van-satellite {
 
         animation: float 10s linear infinite;
@@ -466,7 +466,7 @@ section {
 
     @media (prefers-reduced-motion: reduce) {
         .div-van-satellite {
-            left: -40vw;
+            position: static;
 
             transform: none;
             animation: none;
@@ -635,6 +635,10 @@ input[type="checkbox"] {
         right: 20%;
         transform: scale(1);
         transition: transform 0.3s ease;
+
+        @media (prefers-reduced-motion: reduce) {
+            transtiion:none;
+        }
     }
 
     .black-hole::before {
@@ -653,6 +657,11 @@ input[type="checkbox"] {
             -4vw -1vw 30vw var(--color-orange-3);
         animation: rotate 3s linear infinite;
         transition: box-shadow 0.3s ease;
+
+        @media (prefers-reduced-motion: reduce) {
+            animation:none;
+            transtiion:none;
+        }
     }
 
     /* Hover effect */
@@ -678,6 +687,9 @@ input[type="checkbox"] {
 
     .black-hole.clicked {
         animation: pulse-black-hole 6s ease-out forwards;
+        @media (prefers-reduced-motion: reduce) {
+            animation:none;
+        }
     }
 
     /* Rotatie animatie */
@@ -741,4 +753,78 @@ footer {
         transform: translateY(-600vh) scale(0.5);
         opacity: 1;
     }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto !important;
+    }
+    .raket-link.lanceren {
+        animation: none;
+    }
+}
+
+
+/* meteor gedeelte  */
+.meteor {
+    position: absolute;
+    animation: meteor 3s linear infinite;
+    background-color: white;
+    border-radius: 50px;
+    right: 0;
+    top: 10em;
+    width: 5px;
+    height: 5px;
+    overflow: clip;
+    transform-origin: right center;
+
+    /* bron; https://html-css-js.com/css/generator/box-shadow/ */
+    -webkit-box-shadow: -1px 1px 31px 11px #FFFFFF; 
+    box-shadow: -1px 1px 31px 11px #FFFFFF;
+}
+
+.meteor2 {
+    position: absolute;
+    animation: meteor 4s linear infinite;
+    background-color: white;
+    border-radius: 50px;
+    right: 20em;
+    top: 0;
+    width: 5px;
+    height: 5px;
+    overflow: clip;
+    transform-origin: right center;
+
+    /* bron; https://html-css-js.com/css/generator/box-shadow/ */
+    -webkit-box-shadow: -1px 1px 31px 11px #FFFFFF; 
+    box-shadow: -1px 1px 31px 11px #FFFFFF;
+}
+
+.meteor3 {
+    position: absolute;
+    animation: meteor 2s linear infinite;
+    background-color: white;
+    border-radius: 50px;
+    right: 2em;
+    top: 5em;
+    width: 5px;
+    height: 5px;
+    overflow: clip;
+    transform-origin: right center;
+
+    /* bron; https://html-css-js.com/css/generator/box-shadow/ */
+    -webkit-box-shadow: -1px 1px 31px 11px #FFFFFF; 
+    box-shadow: -1px 1px 31px 11px #FFFFFF;
+}
+
+
+@keyframes meteor {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-80vw, 80vh);
+    opacity: 0;
+  }
 }
