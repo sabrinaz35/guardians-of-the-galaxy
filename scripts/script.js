@@ -42,7 +42,7 @@ document.addEventListener('click', () => {
 
 
 
-
+// sound effect bron; https://pixabay.com/sound-effects/search/wind%20storm%20slowly%20fading%20away/
 const soundEffect = new Audio('audios/soundeffect-blackhole.m4a');
 const blackHole = document.querySelector('.black-hole');
 

@@ -97,3 +97,4 @@ Uiteraard de gegeven informatie van de Nebula Xplorer in het teamskanaal.
 ### javascript bronnen 
 - https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/play 
 - Deze code gegenereerd om de data positions te vinden van de 3d element met prompt; "hoe kan ik punten van mijn 3d element vinden om te gebruiken voor popovers etc"
+- https://pixabay.com/sound-effects/search/wind%20storm%20slowly%20fading%20away/
