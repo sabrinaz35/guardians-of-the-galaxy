@@ -92,6 +92,7 @@ Uiteraard de gegeven informatie van de Nebula Xplorer in het teamskanaal.
 - https://css-tricks.com/scroll-driven-sticky-heading/  
 - https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/filter-function/grayscale 
 - https://codepen.io/waveciou/pen/ZZydGx
+- https://html-css-js.com/css/generator/box-shadow/
 
 
 ### javascript bronnen 
