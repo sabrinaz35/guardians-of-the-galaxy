@@ -189,11 +189,6 @@ if (raketLink) {
         const wiltGeenBeweging = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
         if (wiltGeenBeweging) {
-            // ==========================================
-            // TOEGANKELIJKE ROUTE (Geen animatie, geen geluid)
-            // ==========================================
-            
-            // Spring direct, zonder vertraging, naar de absolute top (0, 0)
             window.scrollTo(0, 0);
             
         } else {
