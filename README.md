@@ -78,6 +78,8 @@ Uiteraard de gegeven informatie van de Nebula Xplorer in het teamskanaal.
 
 - bron; https://modelviewer.dev/docs/
 - bron: https://modelviewer.dev/examplesstagingandcameras/index.html
+- bron van de satellite: Ik heb het bestand van Jean-carlos LDV gehad 
+
 
 ### css bronnen
 - https://fonts.google.com/specimen/Orbitron?preview.script=Latn 
