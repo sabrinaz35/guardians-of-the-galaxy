@@ -34,7 +34,7 @@ Uiteindelijk hebben we het volgende voor elkaar weten te krijgen.
 <img src="images/readme-images/23-03-eindstand-dag3.png" alt="visuele tussenstand 3">
 
 
-## 🗓️ Maandag 24 maart 
+## 🗓️ Dinsdag 24 maart 
 ### 🧱 Verder werken
 We hebben een eerste opzet gemaakt via Figma om iedereen een duidelijk beeld te geven.
 
@@ -56,8 +56,12 @@ Als laatste hebben we ook een custom cursor gemaakt, van een ruimteschip, daarbi
 <img src="images/readme-images/24-03-eindstand-dag4.png" alt="uitgewerkte progress dag 2 foto 4">
 
 
-## 🗓️ Maandag 24 maart 
-Vandaag de laatste puntjes op de i zetten en easter eggs toevoegen. 
+## 🗓️ Woensdag 24 maart 
+Vandaag de laatste puntjes op de i zetten en easter eggs toevoegen. Maar voornamelijk nog gewerkt aan de styling en veel dingen toegevoegd. Zoals de functionaliteit binnen de black hole, een raket, we vonden het zonde om de 2d satelliet helemaal niet toe te voegen, dus die hebben we op een andere plek terug laten komen.
+
+
+## 🗓️ Donderdag 25 maart 
+Vandaag hebben we de laatste easter eggs toegevoegd aan de site en de laatste toegankelijkheids dingetjes, zoals de reduce motion bij de animatie toevoegen. 
 
 
 

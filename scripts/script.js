@@ -46,16 +46,23 @@ document.addEventListener('click', () => {
 const soundEffect = new Audio('audios/soundeffect-blackhole.m4a');
 const blackHole = document.querySelector('.black-hole');
 
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 if (blackHole) {
     blackHole.addEventListener('click', () => {
+
+        // 👉 ALS reduced motion → geen animatie
+        if (prefersReducedMotion) {
+            window.location.href = 'error.html';
+            return;
+        }
+
         const bhRect = blackHole.getBoundingClientRect();
         const elements = document.querySelectorAll('body *:not(.black-hole)');
         soundEffect.play();
 
-        // Voeg klasse voor pulse animatie
         blackHole.classList.add('clicked');
 
-        // Opslokken van alle elementen
         elements.forEach(el => {
             const elRect = el.getBoundingClientRect();
             const deltaX = bhRect.left + bhRect.width/2 - (elRect.left + elRect.width/2);
@@ -66,14 +73,11 @@ if (blackHole) {
             el.style.opacity = '0';
         });
 
-        // Laat de black hole zelf ook groeien langzaam
         blackHole.style.transition = 'transform 5s ease-in';
         blackHole.style.transform = 'scale(3)';
 
-        // Voeg class voor body zodat alle elementen opslokken
         document.body.classList.add('sucked');
 
-        // Na 5s de pagina “sluiten” (redirect naar error.html)
         setTimeout(() => {
             window.location.href = 'error.html';
         }, 5000);
@@ -186,6 +190,13 @@ if (raketLink) {
 
         e.preventDefault();
 
+        const wiltGeenBeweging = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (wiltGeenBeweging) {
+            window.scrollTo(0, 0);
+            
+        } else {
+
         if (raketGeluid) {
             raketGeluid.currentTime = 0;
             raketGeluid.play();
@@ -201,5 +212,6 @@ if (raketLink) {
         this.addEventListener('animationend', () => {
             this.classList.remove('lanceren');
         }, {once:true});
+    }
     })
 }
