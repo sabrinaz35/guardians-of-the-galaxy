@@ -121,5 +121,16 @@ body {
         height:auto;
         transition: opacity 1s ease;
     }  
+
+    .gru {
+        position:absolute;
+        pointer-events: none;
+        opacity:0;
+        left:10%;
+        top:0;
+        width:100%;
+        height:auto;
+        transition: opacity 1s ease;
+    }  
 }
 
