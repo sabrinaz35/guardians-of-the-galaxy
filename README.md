@@ -74,6 +74,7 @@ Uiteraard de gegeven informatie van de Nebula Xplorer in het teamskanaal.
 - https://pixabay.com/nl/sound-effects/film-en-speciale-effecten-rocket-launch-306441/
 - https://www.youtube.com/watch?v=m95JdpLzkQY  
 - https://turboscribe.ai/nl/downloader/youtube/mp4
+- https://www.sron.nl/en/missions/in-development/missies-in-development-nebula-xplorer/?highlight=nebula
 
 - bron; https://modelviewer.dev/docs/
 - bron: https://modelviewer.dev/examplesstagingandcameras/index.html
